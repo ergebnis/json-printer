@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Localheinz\Json\Printer\Test\Unit;
 
-use Localheinz\Json\Printer\JsonFormatter;
+use Localheinz\Json\Printer\Printer;
 use PHPUnit\Framework;
 
-final class JsonFormatterTest extends Framework\TestCase
+final class PrinterTest extends Framework\TestCase
 {
     /**
      * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L20-L34
@@ -27,15 +27,22 @@ final class JsonFormatterTest extends Framework\TestCase
             $this->markTestSkipped('Test requires the mbstring extension');
         }
 
-        $data = '"' . \chr(92) . \chr(92) . \chr(92) . 'u0119"';
-        $encodedData = JsonFormatter::format($data, true, true);
+        $original = '"' . \chr(92) . \chr(92) . \chr(92) . 'u0119"';
+
         $expected = '34+92+92+196+153+34';
-        $this->assertEquals($expected, $this->getCharacterCodes($encodedData));
+
+        $printed = Printer::print(
+            $original,
+            true,
+            true
+        );
+
+        $this->assertSame($expected, $this->getCharacterCodes($printed));
     }
 
-    public function testFormatFormatsArrayPretty()
+    public function testPrintPrintsArrayPretty()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
 JSON;
 
@@ -47,8 +54,8 @@ JSON;
 ]
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             false,
             false
         );
@@ -56,9 +63,9 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testFormatFormatsArrayPrettyWithUnescapeUnicode()
+    public function testPrintPrintsArrayPrettyWithUnEscapeUnicode()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
 JSON;
 
@@ -70,8 +77,8 @@ JSON;
 ]
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             true,
             false
         );
@@ -79,9 +86,9 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testFormatFormatsArrayPrettyWithUnescapeSlashes()
+    public function testPrintPrintsArrayPrettyWithUnEscapeSlashes()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
 JSON;
 
@@ -93,8 +100,8 @@ JSON;
 ]
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             false,
             true
         );
@@ -102,9 +109,9 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testFormatFormatsArrayPrettyWithUnescapeUnicodeAndUnescapeSlashes()
+    public function testPrintPrintsArrayPrettyWithUnEscapeUnicodeAndUnEscapeSlashes()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
 JSON;
 
@@ -116,8 +123,8 @@ JSON;
 ]
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             true,
             true
         );
@@ -125,9 +132,9 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testFormatFormatsObjectPretty()
+    public function testPrintPrintsObjectPretty()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
 JSON;
 
@@ -143,8 +150,8 @@ JSON;
 }
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             false,
             false
         );
@@ -152,9 +159,9 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testFormatFormatsObjectPrettyWithUnescapeUnicode()
+    public function testPrintPrintsObjectPrettyWithUnEscapeUnicode()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
 JSON;
 
@@ -170,8 +177,8 @@ JSON;
 }
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             true,
             false
         );
@@ -179,9 +186,9 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testFormatFormatsObjectPrettyWithUnescapeSlashes()
+    public function testPrintPrintsObjectPrettyWithUnEscapeSlashes()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
 JSON;
 
@@ -197,8 +204,8 @@ JSON;
 }
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             false,
             true
         );
@@ -206,9 +213,9 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testFormatFormatsObjectPrettyWithUnescapeUnicodeAndUnescapeSlashes()
+    public function testPrintPrintsObjectPrettyWithUnEscapeUnicodeAndUnEscapeSlashes()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
 JSON;
 
@@ -224,8 +231,8 @@ JSON;
 }
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             true,
             true
         );
@@ -236,9 +243,9 @@ JSON;
     /**
      * @see https://github.com/zendframework/zend-json/pull/37
      */
-    public function testFormatDoesNotRemoveSpaceAroundCommaInStringValue()
+    public function testPrintDoesNotRemoveSpaceAroundCommaInStringValue()
     {
-        $json = <<<'JSON'
+        $original = <<<'JSON'
 {"after":"Level is greater than 9000, maybe even 9001!","around":"Really , nobody does that.","in-array":["Level is greater than 9000, maybe even 9001!","Really , nobody does that."]}
 JSON;
 
@@ -253,8 +260,8 @@ JSON;
 }
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             true,
             true
         );
@@ -265,9 +272,9 @@ JSON;
     /**
      * @see https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php#L964-L975
      */
-    public function testFormatDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInArray()
+    public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInArray()
     {
-        $json = \json_encode([1, '\\', 3]);
+        $original = \json_encode([1, '\\', 3]);
 
         $expected = <<<'JSON'
 [
@@ -277,8 +284,8 @@ JSON;
 ]
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             true,
             true
         );
@@ -289,9 +296,9 @@ JSON;
     /**
      * @see https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php#L964-L975
      */
-    public function testFormatDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInObject()
+    public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInObject()
     {
-        $json = \json_encode(['a' => '\\']);
+        $original = \json_encode(['a' => '\\']);
 
         $expected = <<<'JSON'
 {
@@ -299,8 +306,8 @@ JSON;
 }
 JSON;
 
-        $printed = JsonFormatter::format(
-            $json,
+        $printed = Printer::print(
+            $original,
             true,
             true
         );

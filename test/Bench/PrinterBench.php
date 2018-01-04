@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Localheinz\Json\Printer\Test\Bench;
 
-use Localheinz\Json\Printer\JsonFormatter;
+use Localheinz\Json\Printer\Printer;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 
-final class JsonFormatterBench
+final class PrinterBench
 {
     /**
      * @see https://www.json-generator.com/
@@ -38,7 +38,7 @@ final class JsonFormatterBench
     /**
      * @Revs(5)
      */
-    public function benchFormat()
+    public function benchPrint()
     {
         $this->print(
             false,
@@ -49,7 +49,7 @@ final class JsonFormatterBench
     /**
      * @Revs(5)
      */
-    public function benchFormatWithUnescapeUnicode()
+    public function benchPrintWithUnEscapeUnicode()
     {
         $this->print(
             true,
@@ -60,7 +60,7 @@ final class JsonFormatterBench
     /**
      * @Revs(5)
      */
-    public function benchFormatWithUnescapeSlashes()
+    public function benchPrintWithUnEscapeSlashes()
     {
         $this->print(
             false,
@@ -71,7 +71,7 @@ final class JsonFormatterBench
     /**
      * @Revs(5)
      */
-    public function benchFormatWithUnescapeUnicodeAndUnescapeSlashes()
+    public function benchPrintWithUnEscapeUnicodeAndUnEscapeSlashes()
     {
         $this->print(
             true,
@@ -79,14 +79,14 @@ final class JsonFormatterBench
         );
     }
 
-    private function print(bool $unescapeUnicode, bool $unescapeSlashes)
+    private function print(bool $unEscapeUnicode, bool $unEscapeSlashes)
     {
-        $json = \file_get_contents($this->filename);
+        $original = \file_get_contents($this->filename);
 
-        JsonFormatter::format(
-            $json,
-            $unescapeUnicode,
-            $unescapeSlashes
+        Printer::print(
+            $original,
+            $unEscapeUnicode,
+            $unEscapeSlashes
         );
     }
 }
