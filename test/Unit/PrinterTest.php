@@ -27,6 +27,25 @@ final class PrinterTest extends Framework\TestCase
         $this->assertClassImplementsInterface(PrinterInterface::class, Printer::class);
     }
 
+    public function testPrintRejectsInvalidJson()
+    {
+        $original = $this->faker()->realText();
+
+        $printer = new Printer();
+
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(\sprintf(
+            '"%s" is not valid JSON.',
+            $original
+        ));
+
+        $printer->print(
+            $original,
+            true,
+            true
+        );
+    }
+
     /**
      * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L20-L34
      */
