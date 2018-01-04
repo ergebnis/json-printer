@@ -41,14 +41,21 @@ final class Printer implements PrinterInterface
         $noEscape = true;
 
         for ($i = 0; $i < $length; ++$i) {
-            // Grab the next character in the string
+            /**
+             * Grab the next character in the string.
+             */
             $character = \substr($original, $i, 1);
 
-            // Are we inside a quoted string?
+            /**
+             * Are we inside a quoted string literal?
+             */
             if ('"' === $character && $noEscape) {
                 $withinStringLiteral = !$withinStringLiteral;
             }
 
+            /**
+             * Collect characters if we are inside a quoted string literal.
+             */
             if ($withinStringLiteral) {
                 $stringLiteral .= $character;
                 $noEscape = '\\' === $character ? !$noEscape : true;
@@ -56,13 +63,24 @@ final class Printer implements PrinterInterface
                 continue;
             }
 
+            /**
+             * Process string literal if we are about to leave it.
+             */
             if ('' !== $stringLiteral) {
+                /**
+                 * Un-escape slashes in string literal.
+                 */
                 if ($unEscapeSlashes) {
                     $stringLiteral = \str_replace('\\/', '/', $stringLiteral);
                 }
 
+                /**
+                 * Un-escape unicode in string literal.
+                 */
                 if ($unEscapeUnicode && \function_exists('mb_convert_encoding')) {
-                    // https://stackoverflow.com/questions/2934563/how-to-decode-unicode-escape-sequences-like-u00ed-to-proper-utf-8-encoded-cha
+                    /**
+                     * @see https://stackoverflow.com/questions/2934563/how-to-decode-unicode-escape-sequences-like-u00ed-to-proper-utf-8-encoded-cha
+                     */
                     $stringLiteral = \preg_replace_callback('/(\\\\+)u([0-9a-f]{4})/i', function (array $match) {
                         $length = \strlen($match[1]);
 
@@ -84,31 +102,37 @@ final class Printer implements PrinterInterface
                 continue;
             }
 
+            /**
+             * Ensure space after ":" character.
+             */
             if (':' === $character) {
-                // Add a space after the : character
                 $character .= ' ';
             } elseif (('}' === $character || ']' === $character)) {
                 --$indentLevel;
                 $previousCharacter = \substr($original, $i - 1, 1);
 
+                /**
+                 * Output a new line and indent the next line if the current character indicates the end of an element.
+                 */
                 if ('{' !== $previousCharacter && '[' !== $previousCharacter) {
-                    // If this character is the end of an element,
-                    // output a new line and indent the next line
                     $printed .= $newLine;
 
                     for ($j = 0; $j < $indentLevel; ++$j) {
                         $printed .= $indent;
                     }
                 } else {
-                    // Collapse empty {} and []
+                    /**
+                     * Collapse empty {} and []
+                     */
                     $printed = \rtrim($printed);
                 }
             }
 
             $printed .= $character;
 
-            // If the last character was the beginning of an element,
-            // output a new line and indent the next line
+            /**
+             * Output a new line and indent the next line if the current character indicates the beginning of an element.
+             */
             if (',' === $character || '{' === $character || '[' === $character) {
                 $printed .= $newLine;
 
