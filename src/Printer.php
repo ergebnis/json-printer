@@ -87,7 +87,7 @@ final class Printer implements PrinterInterface
             if (':' === $character) {
                 // Add a space after the : character
                 $character .= ' ';
-            } elseif (('}' === $character || ']' === $character)) {
+            } elseif ('}' === $character || ']' === $character) {
                 --$indentLevel;
                 $previousCharacter = \substr($original, $i - 1, 1);
 
