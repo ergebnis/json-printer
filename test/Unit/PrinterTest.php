@@ -31,7 +31,9 @@ final class PrinterTest extends Framework\TestCase
 
         $expected = '34+92+92+196+153+34';
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             true
@@ -54,7 +56,9 @@ JSON;
 ]
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             false,
             false
@@ -77,7 +81,9 @@ JSON;
 ]
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             false
@@ -100,7 +106,9 @@ JSON;
 ]
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             false,
             true
@@ -123,7 +131,9 @@ JSON;
 ]
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             true
@@ -150,7 +160,9 @@ JSON;
 }
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             false,
             false
@@ -177,7 +189,9 @@ JSON;
 }
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             false
@@ -204,7 +218,9 @@ JSON;
 }
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             false,
             true
@@ -231,7 +247,9 @@ JSON;
 }
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             true
@@ -260,7 +278,9 @@ JSON;
 }
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             true
@@ -284,7 +304,9 @@ JSON;
 ]
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             true
@@ -306,7 +328,9 @@ JSON;
 }
 JSON;
 
-        $printed = Printer::print(
+        $printer = new Printer();
+
+        $printed = $printer->print(
             $original,
             true,
             true

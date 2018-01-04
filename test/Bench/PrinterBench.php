@@ -83,7 +83,9 @@ final class PrinterBench
     {
         $original = \file_get_contents($this->filename);
 
-        Printer::print(
+        $printer = new Printer();
+
+        $printer->print(
             $original,
             $unEscapeUnicode,
             $unEscapeSlashes
