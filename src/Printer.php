@@ -27,10 +27,19 @@ final class Printer implements PrinterInterface
      * @param bool   $unEscapeUnicode
      * @param bool   $unEscapeSlashes
      *
+     * @throws \InvalidArgumentException
+     *
      * @return string
      */
     public function print(string $original, bool $unEscapeUnicode, bool $unEscapeSlashes): string
     {
+        if (null === \json_decode($original) && JSON_ERROR_NONE !== \json_last_error()) {
+            throw new \InvalidArgumentException(\sprintf(
+                '"%s" is not valid JSON.',
+                $original
+            ));
+        }
+
         $printed = '';
         $indentLevel = 0;
         $length = \strlen($original);
