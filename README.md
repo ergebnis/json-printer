@@ -35,3 +35,10 @@ The [`JsonFormatter`](src/JsonFormatter.php) is adopted from
 and [Jordi Boggiano](https://github.com/seldaek), who adopted it from a 
 [blog post by Dave Perrett](https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/) 
 (originally licensed under MIT by [Dave Perrett](https://github.com/recurser)).
+
+The [`JsonFormatterTest`](test/Unit/JsonFormatterTest.php) is inspired 
+by [`Composer\Test\Json\JsonFormatterTest`](https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php) 
+(originally licensed under MIT by [Nils Adermann](https://github.com/naderman)
+and [Jordi Boggiano](https://github.com/seldaek), as well as 
+[`ZendTest\Json\JsonTest`](https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php) 
+(original licensed under New BSD License).
