@@ -14,10 +14,19 @@ declare(strict_types=1);
 namespace Localheinz\Json\Printer\Test\Unit;
 
 use Localheinz\Json\Printer\Printer;
+use Localheinz\Json\Printer\PrinterInterface;
+use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 final class PrinterTest extends Framework\TestCase
 {
+    use Helper;
+
+    public function testImplementsPrinterInterface()
+    {
+        $this->assertClassImplementsInterface(PrinterInterface::class, Printer::class);
+    }
+
     /**
      * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L20-L34
      */
