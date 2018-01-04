@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Localheinz\Json\Printer;
 
-final class Printer
+final class Printer implements PrinterInterface
 {
     /**
      * This code is adopted from composer/composer (originally licensed under MIT by Nils Adermann <naderman@naderman.de>
