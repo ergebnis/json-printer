@@ -29,7 +29,7 @@ final class Printer
      *
      * @return string
      */
-    public static function print(string $original, bool $unEscapeUnicode, bool $unEscapeSlashes): string
+    public function print(string $original, bool $unEscapeUnicode, bool $unEscapeSlashes): string
     {
         $printed = '';
         $indentLevel = 0;
