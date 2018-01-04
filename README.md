@@ -26,3 +26,12 @@ Please have a look at [`CODE_OF_CONDUCT.md`](.github/CODE_OF_CONDUCT.md).
 ## License
 
 This package is licensed using the MIT License.
+
+## Credits
+
+The [`JsonFormatter`](src/JsonFormatter.php) is adopted from 
+[`Composer\Json\JsonFormatter`](https://github.com/composer/composer/blob/1.6.0/src/Composer/Json/JsonFormatter.php) 
+(originally licensed under MIT by [Nils Adermann](https://github.com/naderman) 
+and [Jordi Boggiano](https://github.com/seldaek), who adopted it from a 
+[blog post by Dave Perrett](https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/) 
+(originally licensed under MIT by [Dave Perrett](https://github.com/recurser)).
