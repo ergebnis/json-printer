@@ -131,7 +131,7 @@ final class Printer implements PrinterInterface
                     }
                 } else {
                     /**
-                     * Collapse empty {} and []
+                     * Collapse empty {} and [].
                      */
                     $printed = \rtrim($printed);
                 }
