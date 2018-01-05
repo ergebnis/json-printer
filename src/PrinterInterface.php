@@ -15,5 +15,10 @@ namespace Localheinz\Json\Printer;
 
 interface PrinterInterface
 {
-    public function print(string $original, bool $unEscapeUnicode, bool $unEscapeSlashes): string;
+    public function print(
+        string $original,
+        string $indent = '    ',
+        bool $unEscapeUnicode = false,
+        bool $unEscapeSlashes = false
+    ): string;
 }

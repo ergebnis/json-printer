@@ -24,6 +24,7 @@ final class Printer implements PrinterInterface
      * @see https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/
      *
      * @param string $original
+     * @param string $indent
      * @param bool   $unEscapeUnicode
      * @param bool   $unEscapeSlashes
      *
@@ -31,8 +32,12 @@ final class Printer implements PrinterInterface
      *
      * @return string
      */
-    public function print(string $original, bool $unEscapeUnicode = false, bool $unEscapeSlashes = false): string
-    {
+    public function print(
+        string $original,
+        string $indent = '    ',
+        bool $unEscapeUnicode = false,
+        bool $unEscapeSlashes = false
+    ): string {
         if (null === \json_decode($original) && JSON_ERROR_NONE !== \json_last_error()) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not valid JSON.',
@@ -40,10 +45,16 @@ final class Printer implements PrinterInterface
             ));
         }
 
+        if (1 !== \preg_match('/^[ \t]+$/', $indent)) {
+            throw new \InvalidArgumentException(\sprintf(
+                '"%s" is not a valid indent.',
+                $indent
+            ));
+        }
+
         $printed = '';
         $indentLevel = 0;
         $length = \strlen($original);
-        $indent = '    ';
         $withinStringLiteral = false;
         $stringLiteral = '';
         $noEscape = true;

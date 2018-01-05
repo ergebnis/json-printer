@@ -83,10 +83,13 @@ final class PrinterBench
     {
         $original = \file_get_contents($this->filename);
 
+        $indent = '  ';
+
         $printer = new Printer();
 
         $printer->print(
             $original,
+            $indent,
             $unEscapeUnicode,
             $unEscapeSlashes
         );
