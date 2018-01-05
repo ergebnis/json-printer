@@ -43,6 +43,45 @@ final class PrinterTest extends Framework\TestCase
     }
 
     /**
+     * @dataProvider providerInvalidIndent
+     *
+     * @param string $indent
+     */
+    public function testPrintRejectsInvalidIndent(string $indent)
+    {
+        $original = <<<'JSON'
+["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
+JSON;
+
+        $printer = new Printer();
+
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(\sprintf(
+            '"%s" is not a valid indent.',
+            $indent
+        ));
+
+        $printer->print(
+            $original,
+            $indent
+        );
+    }
+
+    public function providerInvalidIndent(): \Generator
+    {
+        $values = [
+            'not-whitespace' => $this->faker()->sentence,
+            'contains-line-feed' => " \n ",
+        ];
+
+        foreach ($values as $key => $value) {
+            yield $key => [
+                $value,
+            ];
+        }
+    }
+
+    /**
      * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L20-L34
      */
     public function testPrintWithUnEscapeUnicodeWithPrependedSlash()
@@ -52,6 +91,7 @@ final class PrinterTest extends Framework\TestCase
         }
 
         $original = '"' . \chr(92) . \chr(92) . \chr(92) . 'u0119"';
+        $indent = '    ';
 
         $expected = '34+92+92+196+153+34';
 
@@ -59,6 +99,7 @@ final class PrinterTest extends Framework\TestCase
 
         $printed = $printer->print(
             $original,
+            $indent,
             true,
             true
         );
@@ -101,6 +142,8 @@ JSON;
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
 JSON;
 
+        $indent = '    ';
+
         $expected = <<<'JSON'
 {
     "name": "Andreas Möller",
@@ -117,6 +160,7 @@ JSON;
 
         $printed = $printer->print(
             $original,
+            $indent,
             true
         );
 
@@ -128,6 +172,8 @@ JSON;
         $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
 JSON;
+
+        $indent = '    ';
 
         $expected = <<<'JSON'
 {
@@ -145,6 +191,7 @@ JSON;
 
         $printed = $printer->print(
             $original,
+            $indent,
             false,
             true
         );
@@ -157,6 +204,8 @@ JSON;
         $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
 JSON;
+
+        $indent = '    ';
 
         $expected = <<<'JSON'
 {
@@ -174,6 +223,7 @@ JSON;
 
         $printed = $printer->print(
             $original,
+            $indent,
             true,
             true
         );
@@ -216,10 +266,13 @@ JSON;
 }
 JSON;
 
+        $indent = '    ';
+
         $printer = new Printer();
 
         $printed = $printer->print(
             $original,
+            $indent,
             true
         );
 
@@ -240,10 +293,13 @@ JSON;
 }
 JSON;
 
+        $indent = '    ';
+
         $printer = new Printer();
 
         $printed = $printer->print(
             $original,
+            $indent,
             false,
             true
         );
@@ -265,10 +321,13 @@ JSON;
 }
 JSON;
 
+        $indent = '    ';
+
         $printer = new Printer();
 
         $printed = $printer->print(
             $original,
+            $indent,
             true,
             true
         );
