@@ -39,17 +39,13 @@ final class PrinterTest extends Framework\TestCase
             $original
         ));
 
-        $printer->print(
-            $original,
-            true,
-            true
-        );
+        $printer->print($original);
     }
 
     /**
      * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L20-L34
      */
-    public function testUnicodeWithPrependedSlash()
+    public function testPrintWithUnEscapeUnicodeWithPrependedSlash()
     {
         if (!\extension_loaded('mbstring')) {
             $this->markTestSkipped('Test requires the mbstring extension');
@@ -86,11 +82,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            false,
-            false
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }
@@ -113,8 +105,7 @@ JSON;
 
         $printed = $printer->print(
             $original,
-            true,
-            false
+            true
         );
 
         $this->assertSame($expected, $printed);
@@ -190,11 +181,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            false,
-            false
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }
@@ -221,8 +208,7 @@ JSON;
 
         $printed = $printer->print(
             $original,
-            true,
-            false
+            true
         );
 
         $this->assertSame($expected, $printed);
@@ -302,11 +288,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            false,
-            false
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($original, $printed);
     }
@@ -329,8 +311,7 @@ JSON;
 
         $printed = $printer->print(
             $original,
-            true,
-            false
+            true
         );
 
         $this->assertSame($original, $printed);
@@ -402,11 +383,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            true,
-            true
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }
@@ -427,11 +404,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            true,
-            true
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }
@@ -457,11 +430,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            true,
-            true
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }
@@ -488,11 +457,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            true,
-            true
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }
@@ -514,11 +479,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            true,
-            true
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }
@@ -538,11 +499,7 @@ JSON;
 
         $printer = new Printer();
 
-        $printed = $printer->print(
-            $original,
-            true,
-            true
-        );
+        $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
     }

@@ -31,7 +31,7 @@ final class Printer implements PrinterInterface
      *
      * @return string
      */
-    public function print(string $original, bool $unEscapeUnicode, bool $unEscapeSlashes): string
+    public function print(string $original, bool $unEscapeUnicode = false, bool $unEscapeSlashes = false): string
     {
         if (null === \json_decode($original) && JSON_ERROR_NONE !== \json_last_error()) {
             throw new \InvalidArgumentException(\sprintf(
