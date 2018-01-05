@@ -40,58 +40,10 @@ final class PrinterBench
      */
     public function benchPrint()
     {
-        $this->print(
-            false,
-            false
-        );
-    }
-
-    /**
-     * @Revs(5)
-     */
-    public function benchPrintWithUnEscapeUnicode()
-    {
-        $this->print(
-            true,
-            false
-        );
-    }
-
-    /**
-     * @Revs(5)
-     */
-    public function benchPrintWithUnEscapeSlashes()
-    {
-        $this->print(
-            false,
-            true
-        );
-    }
-
-    /**
-     * @Revs(5)
-     */
-    public function benchPrintWithUnEscapeUnicodeAndUnEscapeSlashes()
-    {
-        $this->print(
-            true,
-            true
-        );
-    }
-
-    private function print(bool $unEscapeUnicode, bool $unEscapeSlashes)
-    {
-        $original = \file_get_contents($this->filename);
-
-        $indent = '  ';
+        $json = \file_get_contents($this->filename);
 
         $printer = new Printer();
 
-        $printer->print(
-            $original,
-            $indent,
-            $unEscapeUnicode,
-            $unEscapeSlashes
-        );
+        $printer->print($json);
     }
 }
