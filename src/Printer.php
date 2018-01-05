@@ -115,14 +115,18 @@ final class Printer implements PrinterInterface
              * Ensure space after ":" character.
              */
             if (':' === $character) {
-                $character .= ' ';
-            } elseif ('}' === $character || ']' === $character) {
+                $printed .= ': ';
+
+                continue;
+            }
+
+            /**
+             * Output a new line and indent the next line if the current character indicates the end of an element.
+             */
+            if ('}' === $character || ']' === $character) {
                 --$indentLevel;
                 $previousCharacter = \substr($original, $i - 1, 1);
 
-                /**
-                 * Output a new line and indent the next line if the current character indicates the end of an element.
-                 */
                 if ('{' !== $previousCharacter && '[' !== $previousCharacter) {
                     $printed .= $newLine;
 
