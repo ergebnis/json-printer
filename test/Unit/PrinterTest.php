@@ -81,36 +81,6 @@ JSON;
         }
     }
 
-    /**
-     * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L20-L34
-     */
-    public function testPrintWithUnEscapeUnicodeWithPrependedSlash()
-    {
-        if (!\extension_loaded('mbstring')) {
-            $this->markTestSkipped('Test requires the mbstring extension');
-        }
-
-        $original = '"' . \chr(92) . \chr(92) . \chr(92) . 'u0119"';
-        $indent = '    ';
-
-        $expected = '34+92+92+196+153+34';
-
-        $printer = new Printer();
-
-        $printed = $printer->print(
-            $original,
-            $indent,
-            true,
-            true
-        );
-
-        $characterCodes = \implode('+', \array_map(function (string $character) {
-            return \ord($character);
-        }, \str_split($printed)));
-
-        $this->assertSame($expected, $characterCodes);
-    }
-
     public function testPrintPrintsPretty()
     {
         $original = <<<'JSON'
@@ -401,6 +371,36 @@ JSON;
         $printed = $printer->print($original);
 
         $this->assertSame($expected, $printed);
+    }
+
+    /**
+     * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L20-L34
+     */
+    public function testPrintWithUnEscapeUnicodeWithPrependedSlash()
+    {
+        if (!\extension_loaded('mbstring')) {
+            $this->markTestSkipped('Test requires the mbstring extension');
+        }
+
+        $original = '"' . \chr(92) . \chr(92) . \chr(92) . 'u0119"';
+        $indent = '    ';
+
+        $expected = '34+92+92+196+153+34';
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            $indent,
+            true,
+            true
+        );
+
+        $characterCodes = \implode('+', \array_map(function (string $character) {
+            return \ord($character);
+        }, \str_split($printed)));
+
+        $this->assertSame($expected, $characterCodes);
     }
 
     /**
