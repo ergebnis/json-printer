@@ -39,7 +39,7 @@ or indented with 4 spaces:
 
 but we want to indent it with 2 spaces (or tabs).
 
-This is where `Localheinz\Json\Printer\Printer` comes  in
+This is where `Localheinz\Json\Printer\Printer` comes in
 
 ```php
 use Localheinz\Json\Printer\Printer;
