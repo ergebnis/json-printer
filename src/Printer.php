@@ -127,7 +127,27 @@ final class Printer implements PrinterInterface
             }
 
             /**
-             * Output a new line and indent the next line if the current character indicates the end of an element.
+             * Output a new line after "," character and and indent the next line.
+             */
+            if (',' === $character) {
+                $printed .= $character . PHP_EOL . \str_repeat($indent, $indentLevel);
+
+                continue;
+            }
+
+            /**
+             * Output a new line after "{" and "[" and indent the next line.
+             */
+            if ('{' === $character || '[' === $character) {
+                ++$indentLevel;
+
+                $printed .= $character . PHP_EOL . \str_repeat($indent, $indentLevel);
+
+                continue;
+            }
+
+            /**
+             * Output a new line after "}" and "]" and indent the next line.
              */
             if ('}' === $character || ']' === $character) {
                 --$indentLevel;
@@ -135,36 +155,19 @@ final class Printer implements PrinterInterface
                 $trimmed = \rtrim($printed);
                 $previousNonWhitespaceCharacter = \substr($trimmed, -1);
 
-                if ('{' !== $previousNonWhitespaceCharacter && '[' !== $previousNonWhitespaceCharacter) {
-                    $printed .= PHP_EOL;
+                /**
+                 * Collapse empty {} and [].
+                 */
+                if ('{' === $previousNonWhitespaceCharacter || '[' === $previousNonWhitespaceCharacter) {
+                    $printed = $trimmed . $character;
 
-                    for ($j = 0; $j < $indentLevel; ++$j) {
-                        $printed .= $indent;
-                    }
-                } else {
-                    /**
-                     * Collapse empty {} and [].
-                     */
-                    $printed = $trimmed;
+                    continue;
                 }
+
+                $printed .= PHP_EOL . \str_repeat($indent, $indentLevel);
             }
 
             $printed .= $character;
-
-            /**
-             * Output a new line and indent the next line if the current character indicates the beginning of an element.
-             */
-            if (',' === $character || '{' === $character || '[' === $character) {
-                $printed .= PHP_EOL;
-
-                if ('{' === $character || '[' === $character) {
-                    ++$indentLevel;
-                }
-
-                for ($j = 0; $j < $indentLevel; ++$j) {
-                    $printed .= $indent;
-                }
-            }
         }
 
         return $printed;
