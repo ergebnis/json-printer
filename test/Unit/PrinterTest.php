@@ -286,6 +286,106 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
+    public function testPrintPrintsObjectPrettyIdempotently()
+    {
+        $original = <<<'JSON'
+{
+    "name": "Andreas M\u00f6ller",
+    "emoji": "🤓",
+    "urls": [
+        "https:\/\/localheinz.com",
+        "https:\/\/github.com\/localheinz",
+        "https:\/\/twitter.com\/localheinz"
+    ]
+}
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            false,
+            false
+        );
+
+        $this->assertSame($original, $printed);
+    }
+
+    public function testPrintPrintsObjectPrettyWithUnEscapeUnicodeIdempotently()
+    {
+        $original = <<<'JSON'
+{
+    "name": "Andreas Möller",
+    "emoji": "🤓",
+    "urls": [
+        "https:\/\/localheinz.com",
+        "https:\/\/github.com\/localheinz",
+        "https:\/\/twitter.com\/localheinz"
+    ]
+}
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            true,
+            false
+        );
+
+        $this->assertSame($original, $printed);
+    }
+
+    public function testPrintPrintsObjectPrettyWithUnEscapeSlashesIdempotently()
+    {
+        $original = <<<'JSON'
+{
+    "name": "Andreas M\u00f6ller",
+    "emoji": "🤓",
+    "urls": [
+        "https://localheinz.com",
+        "https://github.com/localheinz",
+        "https://twitter.com/localheinz"
+    ]
+}
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            false,
+            true
+        );
+
+        $this->assertSame($original, $printed);
+    }
+
+    public function testPrintPrintsObjectPrettyWithUnEscapeUnicodeAndUnEscapeSlashesIdempotently()
+    {
+        $original = <<<'JSON'
+{
+    "name": "Andreas Möller",
+    "emoji": "🤓",
+    "urls": [
+        "https://localheinz.com",
+        "https://github.com/localheinz",
+        "https://twitter.com/localheinz"
+    ]
+}
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            true,
+            true
+        );
+
+        $this->assertSame($original, $printed);
+    }
+
     /**
      * @see https://github.com/zendframework/zend-json/pull/37
      */
