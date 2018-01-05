@@ -131,9 +131,11 @@ final class Printer implements PrinterInterface
              */
             if ('}' === $character || ']' === $character) {
                 --$indentLevel;
-                $previousCharacter = \substr($original, $i - 1, 1);
 
-                if ('{' !== $previousCharacter && '[' !== $previousCharacter) {
+                $trimmed = \rtrim($printed);
+                $previousNonWhitespaceCharacter = \substr($trimmed, -1);
+
+                if ('{' !== $previousNonWhitespaceCharacter && '[' !== $previousNonWhitespaceCharacter) {
                     $printed .= PHP_EOL;
 
                     for ($j = 0; $j < $indentLevel; ++$j) {
@@ -143,7 +145,7 @@ final class Printer implements PrinterInterface
                     /**
                      * Collapse empty {} and [].
                      */
-                    $printed = \rtrim($printed);
+                    $printed = $trimmed;
                 }
             }
 

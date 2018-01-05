@@ -386,6 +386,86 @@ JSON;
         $this->assertSame($original, $printed);
     }
 
+    public function testPrintCollapsesEmptyArray()
+    {
+        $original = <<<'JSON'
+[
+
+
+
+        ]
+JSON;
+
+        $expected = <<<'JSON'
+[]
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            true,
+            true
+        );
+
+        $this->assertSame($expected, $printed);
+    }
+
+    public function testPrintCollapsesEmptyObject()
+    {
+        $original = <<<'JSON'
+{
+
+
+
+        }
+JSON;
+
+        $expected = <<<'JSON'
+{}
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            true,
+            true
+        );
+
+        $this->assertSame($expected, $printed);
+    }
+
+    public function testPrintCollapsesEmptyComplex()
+    {
+        $original = <<<'JSON'
+{
+            "foo":          {
+    
+    
+}   ,
+    "bar": [                                ]
+        }
+JSON;
+
+        $expected = <<<'JSON'
+{
+    "foo": {},
+    "bar": []
+}
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $original,
+            true,
+            true
+        );
+
+        $this->assertSame($expected, $printed);
+    }
+
     /**
      * @see https://github.com/zendframework/zend-json/pull/37
      */
