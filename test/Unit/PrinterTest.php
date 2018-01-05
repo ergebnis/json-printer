@@ -70,102 +70,7 @@ final class PrinterTest extends Framework\TestCase
         $this->assertSame($expected, $characterCodes);
     }
 
-    public function testPrintPrintsArrayPretty()
-    {
-        $original = <<<'JSON'
-["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
-JSON;
-
-        $expected = <<<'JSON'
-[
-    "Andreas M\u00f6ller",
-    "🤓",
-    "https:\/\/localheinz.com"
-]
-JSON;
-
-        $printer = new Printer();
-
-        $printed = $printer->print($original);
-
-        $this->assertSame($expected, $printed);
-    }
-
-    public function testPrintPrintsArrayPrettyWithUnEscapeUnicode()
-    {
-        $original = <<<'JSON'
-["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
-JSON;
-
-        $expected = <<<'JSON'
-[
-    "Andreas Möller",
-    "🤓",
-    "https:\/\/localheinz.com"
-]
-JSON;
-
-        $printer = new Printer();
-
-        $printed = $printer->print(
-            $original,
-            true
-        );
-
-        $this->assertSame($expected, $printed);
-    }
-
-    public function testPrintPrintsArrayPrettyWithUnEscapeSlashes()
-    {
-        $original = <<<'JSON'
-["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
-JSON;
-
-        $expected = <<<'JSON'
-[
-    "Andreas M\u00f6ller",
-    "🤓",
-    "https://localheinz.com"
-]
-JSON;
-
-        $printer = new Printer();
-
-        $printed = $printer->print(
-            $original,
-            false,
-            true
-        );
-
-        $this->assertSame($expected, $printed);
-    }
-
-    public function testPrintPrintsArrayPrettyWithUnEscapeUnicodeAndUnEscapeSlashes()
-    {
-        $original = <<<'JSON'
-["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
-JSON;
-
-        $expected = <<<'JSON'
-[
-    "Andreas Möller",
-    "🤓",
-    "https://localheinz.com"
-]
-JSON;
-
-        $printer = new Printer();
-
-        $printed = $printer->print(
-            $original,
-            true,
-            true
-        );
-
-        $this->assertSame($expected, $printed);
-    }
-
-    public function testPrintPrintsObjectPretty()
+    public function testPrintPrintsPretty()
     {
         $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -190,7 +95,7 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testPrintPrintsObjectPrettyWithUnEscapeUnicode()
+    public function testPrintPrintsPrettyWithUnEscapeUnicode()
     {
         $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -218,7 +123,7 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testPrintPrintsObjectPrettyWithUnEscapeSlashes()
+    public function testPrintPrintsPrettyWithUnEscapeSlashes()
     {
         $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -247,7 +152,7 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testPrintPrintsObjectPrettyWithUnEscapeUnicodeAndUnEscapeSlashes()
+    public function testPrintPrintsPrettyWithUnEscapeUnicodeAndUnEscapeSlashes()
     {
         $original = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -276,7 +181,7 @@ JSON;
         $this->assertSame($expected, $printed);
     }
 
-    public function testPrintPrintsObjectPrettyIdempotently()
+    public function testPrintPrintsPrettyIdempotently()
     {
         $original = <<<'JSON'
 {
@@ -297,7 +202,7 @@ JSON;
         $this->assertSame($original, $printed);
     }
 
-    public function testPrintPrintsObjectPrettyWithUnEscapeUnicodeIdempotently()
+    public function testPrintPrintsPrettyWithUnEscapeUnicodeIdempotently()
     {
         $original = <<<'JSON'
 {
@@ -321,7 +226,7 @@ JSON;
         $this->assertSame($original, $printed);
     }
 
-    public function testPrintPrintsObjectPrettyWithUnEscapeSlashesIdempotently()
+    public function testPrintPrintsPrettyWithUnEscapeSlashesIdempotently()
     {
         $original = <<<'JSON'
 {
@@ -346,7 +251,7 @@ JSON;
         $this->assertSame($original, $printed);
     }
 
-    public function testPrintPrintsObjectPrettyWithUnEscapeUnicodeAndUnEscapeSlashesIdempotently()
+    public function testPrintPrintsPrettyWithUnEscapeUnicodeAndUnEscapeSlashesIdempotently()
     {
         $original = <<<'JSON'
 {
