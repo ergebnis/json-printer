@@ -73,13 +73,6 @@ final class Printer implements PrinterInterface
             }
 
             /**
-             * Ignore whitespace.
-             */
-            if ('' === \trim($character)) {
-                continue;
-            }
-
-            /**
              * Process string literal if we are about to leave it.
              */
             if ('' !== $stringLiteral) {
@@ -115,6 +108,13 @@ final class Printer implements PrinterInterface
                 $printed .= $stringLiteral . $character;
                 $stringLiteral = '';
 
+                continue;
+            }
+
+            /**
+             * Ignore whitespace outside of string literal.
+             */
+            if ('' === \trim($character)) {
                 continue;
             }
 
