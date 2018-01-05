@@ -44,7 +44,6 @@ final class Printer implements PrinterInterface
         $indentLevel = 0;
         $length = \strlen($original);
         $indent = '    ';
-        $newLine = "\n";
         $withinStringLiteral = false;
         $stringLiteral = '';
         $noEscape = true;
@@ -135,7 +134,7 @@ final class Printer implements PrinterInterface
                 $previousCharacter = \substr($original, $i - 1, 1);
 
                 if ('{' !== $previousCharacter && '[' !== $previousCharacter) {
-                    $printed .= $newLine;
+                    $printed .= PHP_EOL;
 
                     for ($j = 0; $j < $indentLevel; ++$j) {
                         $printed .= $indent;
@@ -154,7 +153,7 @@ final class Printer implements PrinterInterface
              * Output a new line and indent the next line if the current character indicates the beginning of an element.
              */
             if (',' === $character || '{' === $character || '[' === $character) {
-                $printed .= $newLine;
+                $printed .= PHP_EOL;
 
                 if ('{' === $character || '[' === $character) {
                     ++$indentLevel;
