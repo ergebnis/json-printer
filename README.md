@@ -15,6 +15,60 @@ Run
 $ composer require localheinz/json-printer
 ```
 
+## Usage
+
+Let's assume we have a variable `$json` which contains some JSON that is not indented:
+
+```json
+{"name":"Andreas Möller","emoji":"🤓","urls":["https://localheinz.com","https://github.com/localheinz","https://twitter.com/localheinz"]}
+```
+
+or indented with 4 spaces:
+
+```json
+{
+    "name":"Andreas Möller",
+    "emoji":"🤓",
+    "urls":[
+        "https://localheinz.com",
+        "https://github.com/localheinz",
+        "https://twitter.com/localheinz"
+    ]
+}
+```
+
+but we want to indent it with 2 spaces (or tabs).
+
+This is where `Localheinz\Json\Printer\Printer` comes  in
+
+```php
+use Localheinz\Json\Printer\Printer;
+
+$printer = new Printer();
+
+$printed = $printer->print(
+    $json, 
+    '  '
+);
+```
+
+which results in `$printed`:
+
+```json
+{
+  "name":"Andreas Möller",
+  "emoji":"🤓",
+  "urls":[
+    "https://localheinz.com",
+    "https://github.com/localheinz",
+    "https://twitter.com/localheinz"
+  ]
+}
+```
+
+:bulb: Note that this printer is only concerned with normalizing the 
+indentation, no escaping or un-escaping occurs.
+
 ## Contributing
 
 Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).

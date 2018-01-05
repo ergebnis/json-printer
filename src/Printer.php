@@ -23,25 +23,29 @@ final class Printer implements PrinterInterface
      * @see https://github.com/composer/composer/blob/1.6.0/src/Composer/Json/JsonFormatter.php#L25-L126
      * @see https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/
      *
-     * @param string $original
+     * The primary objective of the adoption is
+     *
+     * - turn static method into an instance method
+     * - allow to specify indent
+     *
+     * If you observe closely, the options for un-escaping unicode characters and slashes have been removed. Since this
+     * package requires PHP 7, there is no need to implement this in user-land code.
+     * @see http://php.net/manual/en/function.json-encode.php
+     * @see http://php.net/manual/en/json.constants.php
+     *
+     * @param string $json
      * @param string $indent
-     * @param bool   $unEscapeUnicode
-     * @param bool   $unEscapeSlashes
      *
      * @throws \InvalidArgumentException
      *
      * @return string
      */
-    public function print(
-        string $original,
-        string $indent = '    ',
-        bool $unEscapeUnicode = false,
-        bool $unEscapeSlashes = false
-    ): string {
-        if (null === \json_decode($original) && JSON_ERROR_NONE !== \json_last_error()) {
+    public function print(string $json, string $indent = '    '): string
+    {
+        if (null === \json_decode($json) && JSON_ERROR_NONE !== \json_last_error()) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not valid JSON.',
-                $original
+                $json
             ));
         }
 
@@ -54,7 +58,7 @@ final class Printer implements PrinterInterface
 
         $printed = '';
         $indentLevel = 0;
-        $length = \strlen($original);
+        $length = \strlen($json);
         $withinStringLiteral = false;
         $stringLiteral = '';
         $noEscape = true;
@@ -63,7 +67,7 @@ final class Printer implements PrinterInterface
             /**
              * Grab the next character in the string.
              */
-            $character = \substr($original, $i, 1);
+            $character = \substr($json, $i, 1);
 
             /**
              * Are we inside a quoted string literal?
@@ -86,35 +90,6 @@ final class Printer implements PrinterInterface
              * Process string literal if we are about to leave it.
              */
             if ('' !== $stringLiteral) {
-                /**
-                 * Un-escape slashes in string literal.
-                 */
-                if ($unEscapeSlashes) {
-                    $stringLiteral = \str_replace('\\/', '/', $stringLiteral);
-                }
-
-                /**
-                 * Un-escape unicode in string literal.
-                 */
-                if ($unEscapeUnicode && \function_exists('mb_convert_encoding')) {
-                    /**
-                     * @see https://stackoverflow.com/questions/2934563/how-to-decode-unicode-escape-sequences-like-u00ed-to-proper-utf-8-encoded-cha
-                     */
-                    $stringLiteral = \preg_replace_callback('/(\\\\+)u([0-9a-f]{4})/i', function (array $match) {
-                        $length = \strlen($match[1]);
-
-                        if ($length % 2) {
-                            return \str_repeat('\\', $length - 1) . \mb_convert_encoding(
-                                \pack('H*', $match[2]),
-                                'UTF-8',
-                                'UCS-2BE'
-                            );
-                        }
-
-                        return $match[0];
-                    }, $stringLiteral);
-                }
-
                 $printed .= $stringLiteral . $character;
                 $stringLiteral = '';
 
