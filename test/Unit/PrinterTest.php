@@ -67,7 +67,11 @@ final class PrinterTest extends Framework\TestCase
             true
         );
 
-        $this->assertSame($expected, $this->getCharacterCodes($printed));
+        $characterCodes = \implode('+', \array_map(function (string $character) {
+            return \ord($character);
+        }, \str_split($printed)));
+
+        $this->assertSame($expected, $characterCodes);
     }
 
     public function testPrintPrintsArrayPretty()
@@ -545,23 +549,5 @@ JSON;
         );
 
         $this->assertSame($expected, $printed);
-    }
-
-    /**
-     * @see https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php#L36-L49
-     *
-     * @param string $string
-     *
-     * @return string
-     */
-    protected function getCharacterCodes($string)
-    {
-        $codes = [];
-
-        for ($i = 0; $i < \strlen($string); ++$i) {
-            $codes[] = \ord($string[$i]);
-        }
-
-        return \implode('+', $codes);
     }
 }
