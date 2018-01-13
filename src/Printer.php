@@ -20,9 +20,6 @@ final class Printer implements PrinterInterface
      * and Jordi Boggiano <j.boggiano@seld.be>), who adopted it from a blog post by Dave Perrett (originally licensed
      * under MIT by Dave Perrett <mail@recursive-design.com>).
      *
-     * @see https://github.com/composer/composer/blob/1.6.0/src/Composer/Json/JsonFormatter.php#L25-L126
-     * @see https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/
-     *
      * The primary objective of the adoption is
      *
      * - turn static method into an instance method
@@ -30,6 +27,9 @@ final class Printer implements PrinterInterface
      *
      * If you observe closely, the options for un-escaping unicode characters and slashes have been removed. Since this
      * package requires PHP 7, there is no need to implement this in user-land code.
+     *
+     * @see https://github.com/composer/composer/blob/1.6.0/src/Composer/Json/JsonFormatter.php#L25-L126
+     * @see https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/
      * @see http://php.net/manual/en/function.json-encode.php
      * @see http://php.net/manual/en/json.constants.php
      *
