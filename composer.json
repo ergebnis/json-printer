@@ -7,6 +7,7 @@
     "printer",
     "formatter"
   ],
+  "homepage": "https://github.com/localheinz/json-printer",
   "license": "MIT",
   "authors": [
     {
@@ -37,5 +38,9 @@
     "psr-4": {
       "Localheinz\\Json\\Printer\\Test\\": "test/"
     }
+  },
+  "support": {
+    "issues": "https://github.com/localheinz/json-printer/issues",
+    "source": "https://github.com/localheinz/json-printer"
   }
 }
