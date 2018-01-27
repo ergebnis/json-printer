@@ -15,5 +15,13 @@ namespace Localheinz\Json\Printer;
 
 interface PrinterInterface
 {
+    /**
+     * @param string $json
+     * @param string $indent
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return string
+     */
     public function print(string $json, string $indent = '    '): string;
 }
