@@ -23,7 +23,7 @@
     "localheinz/php-cs-fixer-config": "~1.13.1",
     "localheinz/test-util": "0.6.1",
     "phpbench/phpbench": "~0.14.0",
-    "phpunit/phpunit": "^6.5.5"
+    "phpunit/phpunit": "^6.5.7"
   },
   "config": {
     "preferred-install": "dist",
