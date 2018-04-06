@@ -24,6 +24,7 @@ final class Printer implements PrinterInterface
      *
      * - turn static method into an instance method
      * - allow to specify indent
+     * - allow to specify new-line character sequence
      *
      * If you observe closely, the options for un-escaping unicode characters and slashes have been removed. Since this
      * package requires PHP 7, there is no need to implement this in user-land code.
@@ -35,12 +36,13 @@ final class Printer implements PrinterInterface
      *
      * @param string $json
      * @param string $indent
+     * @param string $newLine
      *
      * @throws \InvalidArgumentException
      *
      * @return string
      */
-    public function print(string $json, string $indent = '    '): string
+    public function print(string $json, string $indent = '    ', string $newLine = PHP_EOL): string
     {
         if (null === \json_decode($json) && JSON_ERROR_NONE !== \json_last_error()) {
             throw new \InvalidArgumentException(\sprintf(
@@ -53,6 +55,13 @@ final class Printer implements PrinterInterface
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not a valid indent.',
                 $indent
+            ));
+        }
+
+        if (1 !== \preg_match('/^(?>\r\n|\n|\r)$/', $newLine)) {
+            throw new \InvalidArgumentException(\sprintf(
+                '"%s" is not a valid new-line character sequence.',
+                $newLine
             ));
         }
 
@@ -116,7 +125,7 @@ final class Printer implements PrinterInterface
              * Output a new line after "," character and and indent the next line.
              */
             if (',' === $character) {
-                $printed .= $character . PHP_EOL . \str_repeat($indent, $indentLevel);
+                $printed .= $character . $newLine . \str_repeat($indent, $indentLevel);
 
                 continue;
             }
@@ -127,7 +136,7 @@ final class Printer implements PrinterInterface
             if ('{' === $character || '[' === $character) {
                 ++$indentLevel;
 
-                $printed .= $character . PHP_EOL . \str_repeat($indent, $indentLevel);
+                $printed .= $character . $newLine . \str_repeat($indent, $indentLevel);
 
                 continue;
             }
@@ -150,7 +159,7 @@ final class Printer implements PrinterInterface
                     continue;
                 }
 
-                $printed .= PHP_EOL . \str_repeat($indent, $indentLevel);
+                $printed .= $newLine . \str_repeat($indent, $indentLevel);
             }
 
             $printed .= $character;
