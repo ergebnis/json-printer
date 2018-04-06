@@ -81,6 +81,53 @@ JSON;
         }
     }
 
+    /**
+     * @dataProvider providerInvalidNewLine
+     *
+     * @param string $newLine
+     */
+    public function testPrintRejectsInvalidNewLine(string $newLine)
+    {
+        $json = <<<'JSON'
+["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
+JSON;
+        $indent = '    ';
+
+        $printer = new Printer();
+
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(\sprintf(
+            '"%s" is not a valid new-line character sequence.',
+            $newLine
+        ));
+
+        $printer->print(
+            $json,
+            $indent,
+            $newLine
+        );
+    }
+
+    public function providerInvalidNewLine(): \Generator
+    {
+        $values = [
+            "\t",
+            " \r ",
+            " \r\n ",
+            " \n ",
+            ' ',
+            "\f",
+            "\x0b",
+            "\x85",
+        ];
+
+        foreach ($values as $value) {
+            yield [
+                $value,
+            ];
+        }
+    }
+
     public function testPrintPrintsPretty()
     {
         $json = <<<'JSON'
@@ -133,6 +180,67 @@ JSON;
         );
 
         $this->assertSame($expected, $printed);
+    }
+
+    /**
+     * @dataProvider providerNewLine
+     *
+     * @param string $newLine
+     */
+    public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine)
+    {
+        $json = <<<'JSON'
+{"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
+JSON;
+        $indent = '  ';
+
+        $expected = <<<'JSON'
+{
+  "name": "Andreas M\u00f6ller",
+  "emoji": "🤓",
+  "urls": [
+    "https:\/\/localheinz.com",
+    "https:\/\/github.com\/localheinz",
+    "https:\/\/twitter.com\/localheinz"
+  ]
+}
+JSON;
+
+        $expectedWithNewLine = \str_replace(
+            PHP_EOL,
+            $newLine,
+            $expected
+        );
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $json,
+            $indent,
+            $newLine
+        );
+
+        $this->assertSame($expectedWithNewLine, $printed);
+    }
+
+    /**
+     * @see https://nikic.github.io/2011/12/10/PCRE-and-newlines.html
+     *
+     * @return \Generator
+     */
+    public function providerNewLine(): \Generator
+    {
+        $values = [
+            "\r\n",
+            "\n",
+            "\r",
+        ];
+
+        foreach ($values as $key => $value) {
+            yield $key => [
+                $value,
+            ];
+        }
     }
 
     public function testPrintPrintsPrettyButDoesNotUnEscapeUnicodeCharactersAndSlashes()

@@ -18,10 +18,11 @@ interface PrinterInterface
     /**
      * @param string $json
      * @param string $indent
+     * @param string $newLine
      *
      * @throws \InvalidArgumentException
      *
      * @return string
      */
-    public function print(string $json, string $indent = '    '): string;
+    public function print(string $json, string $indent = '    ', string $newLine = PHP_EOL): string;
 }
