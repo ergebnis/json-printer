@@ -18,6 +18,9 @@ use Localheinz\Json\Printer\PrinterInterface;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
+/**
+ * @internal
+ */
 final class PrinterTest extends Framework\TestCase
 {
     use Helper;
@@ -207,7 +210,7 @@ JSON;
 JSON;
 
         $expectedWithNewLine = \str_replace(
-            PHP_EOL,
+            \PHP_EOL,
             $newLine,
             $expected
         );
