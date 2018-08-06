@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @see https://github.com/localheinz/json-printer
  */
 
-namespace Localheinz\Json\Printer\Test\Unit;
+namespace Localheinz\Json\Printer\Test\AutoReview;
 
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
@@ -19,23 +19,9 @@ use PHPUnit\Framework;
 /**
  * @internal
  */
-final class ProjectCodeTest extends Framework\TestCase
+final class TestCodeTest extends Framework\TestCase
 {
     use Helper;
-
-    public function testProductionClassesAreAbstractOrFinal()
-    {
-        $this->assertClassesAreAbstractOrFinal(__DIR__ . '/../../src');
-    }
-
-    public function testProductionClassesHaveTests()
-    {
-        $this->assertClassesHaveTests(
-            __DIR__ . '/../../src',
-            'Localheinz\\Json\\Printer\\',
-            'Localheinz\\Json\\Printer\\Test\\Unit\\'
-        );
-    }
 
     public function testTestClassesAreAbstractOrFinal()
     {
