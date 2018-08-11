@@ -51,7 +51,7 @@ final class Printer implements PrinterInterface
             ));
         }
 
-        if (1 !== \preg_match('/^[ \t]+$/', $indent)) {
+        if (1 !== \preg_match('/^( +|\t+)$/', $indent)) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not a valid indent.',
                 $indent

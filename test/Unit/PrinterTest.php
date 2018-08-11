@@ -73,8 +73,9 @@ JSON;
     public function providerInvalidIndent(): \Generator
     {
         $values = [
-            'not-whitespace' => $this->faker()->sentence,
-            'contains-line-feed' => " \n ",
+            'string-contains-line-feed' => " \n ",
+            'string-mixed-space-and-tab' => " \t",
+            'string-not-whitespace' => $this->faker()->sentence,
         ];
 
         foreach ($values as $key => $value) {
