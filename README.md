@@ -1,6 +1,6 @@
 # json-printer
 
-[![Build Status](https://travis-ci.org/localheinz/json-printer.svg?branch=master)](https://travis-ci.org/localheinz/json-printer)
+[![Build Status](https://travis-ci.com/localheinz/json-printer.svg?branch=master)](https://travis-ci.com/localheinz/json-printer)
 [![codecov](https://codecov.io/gh/localheinz/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/json-printer)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/json-printer/v/stable)](https://packagist.org/packages/localheinz/json-printer)
 [![Total Downloads](https://poser.pugx.org/localheinz/json-printer/downloads)](https://packagist.org/packages/localheinz/json-printer)
