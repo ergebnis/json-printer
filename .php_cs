@@ -11,7 +11,7 @@ the LICENSE file that was distributed with this source code.
 @see https://github.com/localheinz/json-printer
 EOF;
 
-$config = Config\Factory::fromRuleSet(new Config\RuleSet\Php70($header), [
+$config = Config\Factory::fromRuleSet(new Config\RuleSet\Php71($header), [
     'escape_implicit_backslashes' => false,
     'mb_str_functions' => false,
 ]);
