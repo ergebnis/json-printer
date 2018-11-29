@@ -154,7 +154,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     public function testPrintPrintsPrettyWithIndent()
@@ -183,7 +183,7 @@ JSON;
             $indent
         );
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     /**
@@ -224,7 +224,7 @@ JSON;
             $newLine
         );
 
-        $this->assertSame($expectedWithNewLine, $printed);
+        self::assertSame($expectedWithNewLine, $printed);
     }
 
     /**
@@ -269,7 +269,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     public function testPrintPrintsPrettyButDoesNotEscapeUnicodeCharactersAndSlashes()
@@ -294,7 +294,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     public function testPrintPrintsPrettyIdempotently()
@@ -315,7 +315,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($json, $printed);
+        self::assertSame($json, $printed);
     }
 
     public function testPrintCollapsesEmptyArray()
@@ -336,7 +336,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     public function testPrintCollapsesEmptyObject()
@@ -357,7 +357,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     public function testPrintCollapsesEmptyComplex()
@@ -383,7 +383,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     /**
@@ -410,7 +410,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     /**
@@ -432,7 +432,7 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 
     /**
@@ -452,6 +452,6 @@ JSON;
 
         $printed = $printer->print($json);
 
-        $this->assertSame($expected, $printed);
+        self::assertSame($expected, $printed);
     }
 }
