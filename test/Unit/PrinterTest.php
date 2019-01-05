@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Copyright (c) 2018 Andreas Möller.
+ * Copyright (c) 2018 Andreas Möller
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
@@ -25,12 +25,12 @@ final class PrinterTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testImplementsPrinterInterface()
+    public function testImplementsPrinterInterface(): void
     {
         $this->assertClassImplementsInterface(PrinterInterface::class, Printer::class);
     }
 
-    public function testPrintRejectsInvalidJson()
+    public function testPrintRejectsInvalidJson(): void
     {
         $json = $this->faker()->realText();
 
@@ -50,7 +50,7 @@ final class PrinterTest extends Framework\TestCase
      *
      * @param string $indent
      */
-    public function testPrintRejectsInvalidIndent(string $indent)
+    public function testPrintRejectsInvalidIndent(string $indent): void
     {
         $json = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
@@ -90,7 +90,7 @@ JSON;
      *
      * @param string $newLine
      */
-    public function testPrintRejectsInvalidNewLine(string $newLine)
+    public function testPrintRejectsInvalidNewLine(string $newLine): void
     {
         $json = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
@@ -132,7 +132,7 @@ JSON;
         }
     }
 
-    public function testPrintPrintsPretty()
+    public function testPrintPrintsPretty(): void
     {
         $json = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -157,7 +157,7 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    public function testPrintPrintsPrettyWithIndent()
+    public function testPrintPrintsPrettyWithIndent(): void
     {
         $json = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -191,7 +191,7 @@ JSON;
      *
      * @param string $newLine
      */
-    public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine)
+    public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine): void
     {
         $json = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -247,7 +247,7 @@ JSON;
         }
     }
 
-    public function testPrintPrintsPrettyButDoesNotUnEscapeUnicodeCharactersAndSlashes()
+    public function testPrintPrintsPrettyButDoesNotUnEscapeUnicodeCharactersAndSlashes(): void
     {
         $json = <<<'JSON'
 {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
@@ -272,7 +272,7 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    public function testPrintPrintsPrettyButDoesNotEscapeUnicodeCharactersAndSlashes()
+    public function testPrintPrintsPrettyButDoesNotEscapeUnicodeCharactersAndSlashes(): void
     {
         $json = <<<'JSON'
 {"name":"Andreas Möller","emoji":"🤓","urls":["https://localheinz.com","https://github.com/localheinz","https://twitter.com/localheinz"]}
@@ -297,7 +297,7 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    public function testPrintPrintsPrettyIdempotently()
+    public function testPrintPrintsPrettyIdempotently(): void
     {
         $json = <<<'JSON'
 {
@@ -318,7 +318,7 @@ JSON;
         self::assertSame($json, $printed);
     }
 
-    public function testPrintCollapsesEmptyArray()
+    public function testPrintCollapsesEmptyArray(): void
     {
         $json = <<<'JSON'
 [
@@ -339,7 +339,7 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    public function testPrintCollapsesEmptyObject()
+    public function testPrintCollapsesEmptyObject(): void
     {
         $json = <<<'JSON'
 {
@@ -360,7 +360,7 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    public function testPrintCollapsesEmptyComplex()
+    public function testPrintCollapsesEmptyComplex(): void
     {
         $json = <<<'JSON'
 {
@@ -389,7 +389,7 @@ JSON;
     /**
      * @see https://github.com/zendframework/zend-json/pull/37
      */
-    public function testPrintDoesNotRemoveSpaceAroundCommaInStringValue()
+    public function testPrintDoesNotRemoveSpaceAroundCommaInStringValue(): void
     {
         $json = <<<'JSON'
 {"after":"Level is greater than 9000, maybe even 9001!","around":"Really , nobody does that.","in-array":["Level is greater than 9000, maybe even 9001!","Really , nobody does that."]}
@@ -416,7 +416,7 @@ JSON;
     /**
      * @see https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php#L964-L975
      */
-    public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInArray()
+    public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInArray(): void
     {
         $json = \json_encode([1, '\\', 3]);
 
@@ -438,7 +438,7 @@ JSON;
     /**
      * @see https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php#L964-L975
      */
-    public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInObject()
+    public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInObject(): void
     {
         $json = \json_encode(['a' => '\\']);
 
