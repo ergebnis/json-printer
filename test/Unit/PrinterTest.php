@@ -20,6 +20,7 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ * @coversNothing
  */
 final class PrinterTest extends Framework\TestCase
 {
