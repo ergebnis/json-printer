@@ -20,7 +20,8 @@ use PHPUnit\Framework;
 
 /**
  * @internal
- * @coversNothing
+ *
+ * @covers \Localheinz\Json\Printer\Printer
  */
 final class PrinterTest extends Framework\TestCase
 {
