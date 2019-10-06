@@ -1,8 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * Copyright (c) 2018 Andreas Möller
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ *
+ * @see https://github.com/localheinz/json-printer
+ */
+
 use Localheinz\PhpCsFixer\Config;
 
-$header = <<<EOF
+$header = <<<'EOF'
 Copyright (c) 2018 Andreas Möller
 
 For the full copyright and license information, please view
@@ -16,10 +27,16 @@ $config = Config\Factory::fromRuleSet(new Config\RuleSet\Php71($header), [
     'mb_str_functions' => false,
 ]);
 
-$config->getFinder()->in(__DIR__);
+$config->getFinder()
+    ->ignoreDotFiles(false)
+    ->in(__DIR__)
+    ->exclude([
+        '.build',
+        '.dependabot',
+        '.github',
+    ])
+    ->name('.php_cs');
 
-$cacheDir = \getenv('TRAVIS') ? \getenv('HOME') . '/.php-cs-fixer' : __DIR__;
-
-$config->setCacheFile($cacheDir . '/.php_cs.cache');
+$config->setCacheFile(__DIR__ . '/.build/php-cs-fixer/.php_cs.cache');
 
 return $config;

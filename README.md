@@ -1,6 +1,6 @@
 # json-printer
 
-[![Build Status](https://travis-ci.com/localheinz/json-printer.svg?branch=master)](https://travis-ci.com/localheinz/json-printer)
+[![Continuous Integration Status](https://github.com/localheinz/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/json-printer/actions)
 [![codecov](https://codecov.io/gh/localheinz/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/json-printer)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/json-printer/v/stable)](https://packagist.org/packages/localheinz/json-printer)
 [![Total Downloads](https://poser.pugx.org/localheinz/json-printer/downloads)](https://packagist.org/packages/localheinz/json-printer)
@@ -47,7 +47,7 @@ use Localheinz\Json\Printer\Printer;
 $printer = new Printer();
 
 $printed = $printer->print(
-    $json, 
+    $json,
     '  '
 );
 ```
@@ -66,7 +66,7 @@ which results in `$printed`:
 }
 ```
 
-:bulb: Note that this printer is only concerned with normalizing the 
+:bulb: Note that this printer is only concerned with normalizing the
 indentation, no escaping or un-escaping occurs.
 
 ## Contributing
@@ -83,16 +83,16 @@ This package is licensed using the MIT License.
 
 ## Credits
 
-The [`Printer`](src/Printer.php) is adopted from 
-[`Composer\Json\JsonFormatter`](https://github.com/composer/composer/blob/1.6.0/src/Composer/Json/JsonFormatter.php) 
-(originally licensed under MIT by [Nils Adermann](https://github.com/naderman) 
-and [Jordi Boggiano](https://github.com/seldaek)), who adopted it from a 
-[blog post by Dave Perrett](https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/) 
+The [`Printer`](src/Printer.php) is adopted from
+[`Composer\Json\JsonFormatter`](https://github.com/composer/composer/blob/1.6.0/src/Composer/Json/JsonFormatter.php)
+(originally licensed under MIT by [Nils Adermann](https://github.com/naderman)
+and [Jordi Boggiano](https://github.com/seldaek)), who adopted it from a
+[blog post by Dave Perrett](https://www.daveperrett.com/articles/2008/03/11/format-json-with-php/)
 (originally licensed under MIT by [Dave Perrett](https://github.com/recurser)).
 
-The [`PrinterTest`](test/Unit/PrinterTest.php) is inspired 
-by [`Composer\Test\Json\JsonFormatterTest`](https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php) 
+The [`PrinterTest`](test/Unit/PrinterTest.php) is inspired
+by [`Composer\Test\Json\JsonFormatterTest`](https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php)
 (originally licensed under MIT by [Nils Adermann](https://github.com/naderman)
-and [Jordi Boggiano](https://github.com/seldaek)), as well as 
-[`ZendTest\Json\JsonTest`](https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php) 
+and [Jordi Boggiano](https://github.com/seldaek)), as well as
+[`ZendTest\Json\JsonTest`](https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php)
 (originally licensed under New BSD License).

@@ -67,7 +67,7 @@ final class Printer implements PrinterInterface
 
         $printed = '';
         $indentLevel = 0;
-        $length = \strlen($json);
+        $length = \mb_strlen($json);
         $withinStringLiteral = false;
         $stringLiteral = '';
         $noEscape = true;
@@ -76,7 +76,7 @@ final class Printer implements PrinterInterface
             /**
              * Grab the next character in the string.
              */
-            $character = \substr($json, $i, 1);
+            $character = \mb_substr($json, $i, 1);
 
             /**
              * Are we inside a quoted string literal?
@@ -148,7 +148,7 @@ final class Printer implements PrinterInterface
                 --$indentLevel;
 
                 $trimmed = \rtrim($printed);
-                $previousNonWhitespaceCharacter = \substr($trimmed, -1);
+                $previousNonWhitespaceCharacter = \mb_substr($trimmed, -1);
 
                 /**
                  * Collapse empty {} and [].

@@ -8,11 +8,14 @@
     beStrictAboutTestsThatDoNotTestAnything="true"
     beStrictAboutTodoAnnotatedTests="true"
     bootstrap="../../vendor/autoload.php"
+    cacheResult="true"
+    cacheResultFile="../../.build/phpunit/auto-review.cache"
     colors="true"
     columns="max"
     convertErrorsToExceptions="true"
     convertNoticesToExceptions="true"
     convertWarningsToExceptions="true"
+    executionOrder="random"
     stopOnError="false"
     stopOnFailure="false"
     stopOnIncomplete="false"
@@ -20,7 +23,7 @@
     verbose="true"
 >
     <testsuites>
-        <testsuite name="AutoReview Tests">
+        <testsuite name="Auto Review Tests">
             <directory>.</directory>
         </testsuite>
     </testsuites>
