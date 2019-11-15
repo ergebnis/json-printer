@@ -1,8 +1,8 @@
-.PHONY: bench coverage cs help infection it test
+.PHONY: bench coverage cs help infection it stan test
 
-it: cs test bench ## Runs the cs, test, and bench targets
+it: cs stan test ## Runs the cs, stan, and test targets
 
-bench: vendor
+bench: vendor ## Runs benchmarks with phpbench
 	vendor/bin/phpbench run --report=aggregate
 
 coverage: vendor ## Collects coverage from running unit tests with phpunit
@@ -19,9 +19,13 @@ help: ## Displays this list of targets with descriptions
 
 infection: vendor ## Runs mutation tests with infection
 	mkdir -p .build/infection
-	vendor/bin/infection --ignore-msi-with-no-mutations --min-covered-msi=80 --min-msi=80
+	vendor/bin/infection --ignore-msi-with-no-mutations --min-covered-msi=92 --min-msi=92
 
-test: vendor ## Runs auto-review and unit tests with phpunit
+stan: vendor ## Runs a static analysis with phpstan
+	mkdir -p .build/phpstan
+	vendor/bin/phpstan analyse --configuration=phpstan.neon
+
+test: vendor ## Runs auto-review, unit, and integration tests with phpunit
 	mkdir -p .build/phpunit
 	vendor/bin/phpunit --configuration=test/AutoReview/phpunit.xml
 	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml

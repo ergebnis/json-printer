@@ -420,6 +420,7 @@ JSON;
      */
     public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInArray(): void
     {
+        /** @var string $json */
         $json = \json_encode([1, '\\', 3]);
 
         $expected = <<<'JSON'
@@ -442,6 +443,7 @@ JSON;
      */
     public function testPrintDoesNotConsiderDoubleQuoteFollowingEscapedBackslashAsEscapedInObject(): void
     {
+        /** @var string $json */
         $json = \json_encode(['a' => '\\']);
 
         $expected = <<<'JSON'
