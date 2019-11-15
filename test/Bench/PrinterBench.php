@@ -32,6 +32,13 @@ final class PrinterBench
     {
         $original = \file_get_contents($this->filename);
 
+        if (!\is_string($original)) {
+            throw new \RuntimeException(\sprintf(
+                'Failed getting contents of file "%s".',
+                $this->filename
+            ));
+        }
+
         \json_encode(\json_decode($original));
     }
 
@@ -41,6 +48,13 @@ final class PrinterBench
     public function benchPrint(): void
     {
         $json = \file_get_contents($this->filename);
+
+        if (!\is_string($json)) {
+            throw new \RuntimeException(\sprintf(
+                'Failed getting contents of file "%s".',
+                $this->filename
+            ));
+        }
 
         $printer = new Printer();
 

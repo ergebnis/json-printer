@@ -1,6 +1,6 @@
 # json-printer
 
-[![Continuous Integration Status](https://github.com/localheinz/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/json-printer/actions)
+[![Continuous Integration](https://github.com/localheinz/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/json-printer/actions)
 [![codecov](https://codecov.io/gh/localheinz/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/json-printer)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/json-printer/v/stable)](https://packagist.org/packages/localheinz/json-printer)
 [![Total Downloads](https://poser.pugx.org/localheinz/json-printer/downloads)](https://packagist.org/packages/localheinz/json-printer)
@@ -68,6 +68,10 @@ which results in `$printed`:
 
 :bulb: Note that this printer is only concerned with normalizing the
 indentation, no escaping or un-escaping occurs.
+
+## Changelog
+
+Please have a look at [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Contributing
 
