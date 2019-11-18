@@ -29,12 +29,12 @@ final class PrinterTest extends Framework\TestCase
 
     public function testImplementsPrinterInterface(): void
     {
-        $this->assertClassImplementsInterface(PrinterInterface::class, Printer::class);
+        self::assertClassImplementsInterface(PrinterInterface::class, Printer::class);
     }
 
     public function testPrintRejectsInvalidJson(): void
     {
-        $json = $this->faker()->realText();
+        $json = self::faker()->realText();
 
         $printer = new Printer();
 
@@ -77,7 +77,7 @@ JSON;
         $values = [
             'string-contains-line-feed' => " \n ",
             'string-mixed-space-and-tab' => " \t",
-            'string-not-whitespace' => $this->faker()->sentence,
+            'string-not-whitespace' => self::faker()->sentence,
         ];
 
         foreach ($values as $key => $value) {
