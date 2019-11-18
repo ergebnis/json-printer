@@ -22,7 +22,7 @@
     "infection/infection": "~0.13.6",
     "localheinz/php-cs-fixer-config": "~1.24.0",
     "localheinz/phpstan-rules": "~0.13.0",
-    "localheinz/test-util": "~0.7.0",
+    "localheinz/test-util": "~0.8.0",
     "phpbench/phpbench": "~0.16.10",
     "phpstan/phpstan": "~0.11.19",
     "phpstan/phpstan-deprecation-rules": "~0.11.2",
