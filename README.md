@@ -1,7 +1,7 @@
 # json-printer
 
 [![Continuous Integration](https://github.com/localheinz/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/json-printer/actions)
-[![codecov](https://codecov.io/gh/localheinz/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/json-printer)
+[![Code Coverage](https://codecov.io/gh/localheinz/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/json-printer)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/json-printer/v/stable)](https://packagist.org/packages/localheinz/json-printer)
 [![Total Downloads](https://poser.pugx.org/localheinz/json-printer/downloads)](https://packagist.org/packages/localheinz/json-printer)
 
