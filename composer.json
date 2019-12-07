@@ -17,7 +17,8 @@
   ],
   "require": {
     "php": "^7.2",
-    "ext-json": "*"
+    "ext-json": "*",
+    "ext-mbstring": "*"
   },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "~1.1.0",
