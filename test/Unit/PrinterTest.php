@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Localheinz\Json\Printer\Test\Unit;
 
+use Ergebnis\Test\Util\Helper;
 use Localheinz\Json\Printer\Printer;
 use Localheinz\Json\Printer\PrinterInterface;
-use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 /**
