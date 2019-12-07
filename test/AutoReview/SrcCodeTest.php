@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Localheinz\Json\Printer\Test\AutoReview;
 
-use Localheinz\Test\Util\Helper;
+use Ergebnis\Test\Util\Helper;
 use PHPUnit\Framework;
 
 /**
