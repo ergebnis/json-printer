@@ -6,8 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`2.0.1...master`](https://github.com/localheinz/json-printer/compare/2.0.1...master).
+For a full diff see [`2.0.1...master`][2.0.1...master].
 
 ### Fixed
 
-* Removed support for PHP 7.1 ([#55](https://github.com/localheinz/json-printer/pull/55)), by [@localheinz](https://github.com/localheinz)
+* Removed support for PHP 7.1 ([#55]), by [@localheinz]
+
+[2.0.1...master]: https://github.com/localheinz/json-printer/compare/2.0.1...master
+
+[#55]: https://github.com/localheinz/json-printer/pull/55
+[#63]: https://github.com/localheinz/json-printer/pull/63
+
+[@localheinz]: https://github.com/localheinz
