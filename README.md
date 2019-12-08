@@ -1,9 +1,9 @@
 # json-printer
 
-[![Continuous Integration](https://github.com/localheinz/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/json-printer/actions)
-[![Code Coverage](https://codecov.io/gh/localheinz/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/json-printer)
-[![Latest Stable Version](https://poser.pugx.org/localheinz/json-printer/v/stable)](https://packagist.org/packages/localheinz/json-printer)
-[![Total Downloads](https://poser.pugx.org/localheinz/json-printer/downloads)](https://packagist.org/packages/localheinz/json-printer)
+[![Continuous Integration](https://github.com/ergebnis/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/json-printer/actions)
+[![Code Coverage](https://codecov.io/gh/ergebnis/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-printer)
+[![Latest Stable Version](https://poser.pugx.org/ergebnis/json-printer/v/stable)](https://packagist.org/packages/ergebnis/json-printer)
+[![Total Downloads](https://poser.pugx.org/ergebnis/json-printer/downloads)](https://packagist.org/packages/ergebnis/json-printer)
 
 Provides a JSON printer, allowing for flexible indentation.
 
@@ -12,7 +12,7 @@ Provides a JSON printer, allowing for flexible indentation.
 Run
 
 ```
-$ composer require localheinz/json-printer
+$ composer require ergebnis/json-printer
 ```
 
 ## Usage
@@ -39,10 +39,10 @@ or indented with 4 spaces:
 
 but we want to indent it with 2 spaces (or tabs).
 
-This is where `Localheinz\Json\Printer\Printer` comes in
+This is where `Ergebnis\Json\Printer\Printer` comes in
 
 ```php
-use Localheinz\Json\Printer\Printer;
+use Ergebnis\Json\Printer\Printer;
 
 $printer = new Printer();
 

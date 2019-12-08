@@ -8,20 +8,20 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @see https://github.com/localheinz/json-printer
+ * @see https://github.com/ergebnis/json-printer
  */
 
-namespace Localheinz\Json\Printer\Test\Unit;
+namespace Ergebnis\Json\Printer\Test\Unit;
 
+use Ergebnis\Json\Printer\Printer;
+use Ergebnis\Json\Printer\PrinterInterface;
 use Ergebnis\Test\Util\Helper;
-use Localheinz\Json\Printer\Printer;
-use Localheinz\Json\Printer\PrinterInterface;
 use PHPUnit\Framework;
 
 /**
  * @internal
  *
- * @covers \Localheinz\Json\Printer\Printer
+ * @covers \Ergebnis\Json\Printer\Printer
  */
 final class PrinterTest extends Framework\TestCase
 {
@@ -367,8 +367,8 @@ JSON;
         $json = <<<'JSON'
 {
             "foo":          {
-    
-    
+
+
 }   ,
     "bar": [                                ]
         }

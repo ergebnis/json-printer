@@ -8,10 +8,10 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @see https://github.com/localheinz/json-printer
+ * @see https://github.com/ergebnis/json-printer
  */
 
-namespace Localheinz\Json\Printer\Test\AutoReview;
+namespace Ergebnis\Json\Printer\Test\AutoReview;
 
 use Ergebnis\Test\Util\Helper;
 use PHPUnit\Framework;
@@ -29,8 +29,8 @@ final class SrcCodeTest extends Framework\TestCase
     {
         self::assertClassesHaveTests(
             __DIR__ . '/../../src',
-            'Localheinz\\Json\\Printer\\',
-            'Localheinz\\Json\\Printer\\Test\\Unit\\'
+            'Ergebnis\\Json\\Printer\\',
+            'Ergebnis\\Json\\Printer\\Test\\Unit\\'
         );
     }
 }
