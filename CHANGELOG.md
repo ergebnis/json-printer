@@ -24,7 +24,6 @@ For a full diff see [`2.0.1...3.0.0`][2.0.1...3.0.0].
 
   and
 
-
   ```
   $ composer require ergebnis/json-printer
   ```
@@ -37,7 +36,7 @@ For a full diff see [`2.0.1...3.0.0`][2.0.1...3.0.0].
   $ find . -type f -exec sed -i '.bak' 's/Localheinz\\Json\\Printer/Ergebnis\\Json\\Printer/g' {} \;
   ```
 
-  to replace occurrences of `Localheinz\Json\Printer` with Ergebnis\Json\Printer`.
+  to replace occurrences of `Localheinz\Json\Printer` with `Ergebnis\Json\Printer`.
 
   Run
 
