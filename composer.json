@@ -25,9 +25,9 @@
   },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "~1.1.0",
+    "ergebnis/phpstan-rules": "~0.14.0",
     "ergebnis/test-util": "~0.9.0",
     "infection/infection": "~0.13.6",
-    "localheinz/phpstan-rules": "~0.13.0",
     "phpbench/phpbench": "~0.16.10",
     "phpstan/extension-installer": "^1.0.3",
     "phpstan/phpstan": "~0.11.19",
