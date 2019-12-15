@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`2.0.1...master`][3.0.0...master].
+For a full diff see [`3.0.1...master`][3.0.1...master].
+
+## [`3.0.1`][3.0.1]
+
+For a full diff see [`3.0.0...3.0.1`][3.0.0...3.0.1].
+
+### Fixed
+
+* Removed an inappropriate `replace` configuration from `composer.json` ([#72]), by [@localheinz]
 
 ## [`3.0.0`][3.0.0]
 
@@ -80,19 +88,22 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [2.0.0]: https://github.com/ergebnis/json-printer/releases/tag/2.0.0
 [2.0.1]: https://github.com/ergebnis/json-printer/releases/tag/2.0.1
 [3.0.0]: https://github.com/ergebnis/json-printer/releases/tag/3.0.0
+[3.0.1]: https://github.com/ergebnis/json-printer/releases/tag/3.0.1
 
 [8849fc6...1.0.0]: https://github.com/ergebnis/json-printer/compare/8849fc6...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/json-printer/compare/1.0.0...1.1.0
 [1.1.0...2.0.0]: https://github.com/ergebnis/json-printer/compare/1.1.0...2.0.0
 [2.0.0...2.0.1]: https://github.com/ergebnis/json-printer/compare/2.0.0...2.0.1
 [2.0.1...3.0.0]: https://github.com/ergebnis/json-printer/compare/2.0.1...3.0.0
-[3.0.0...master]: https://github.com/ergebnis/json-printer/compare/3.0.0...master
+[3.0.0...3.0.1]: https://github.com/ergebnis/json-printer/compare/3.0.0...3.0.1
+[3.0.1...master]: https://github.com/ergebnis/json-printer/compare/3.0.1...master
 
 [#33]: https://github.com/ergebnis/json-printer/pull/33
 [#37]: https://github.com/ergebnis/json-printer/pull/37
 [#55]: https://github.com/ergebnis/json-printer/pull/55
 [#63]: https://github.com/ergebnis/json-printer/pull/63
 [#67]: https://github.com/ergebnis/json-printer/pull/67
+[#72]: https://github.com/ergebnis/json-printer/pull/72
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz

@@ -20,9 +20,6 @@
     "ext-json": "*",
     "ext-mbstring": "*"
   },
-  "replace": {
-    "localheinz/json-printer": "*"
-  },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "~1.1.0",
     "ergebnis/phpstan-rules": "~0.14.0",
