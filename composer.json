@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": "^7.2",
+    "php": "^7.1",
     "ext-json": "*",
     "ext-mbstring": "*"
   },
@@ -30,7 +30,7 @@
     "phpstan/phpstan": "~0.11.19",
     "phpstan/phpstan-deprecation-rules": "~0.11.2",
     "phpstan/phpstan-strict-rules": "~0.11.1",
-    "phpunit/phpunit": "^8.5.0"
+    "phpunit/phpunit": "^7.5.18"
   },
   "config": {
     "preferred-install": "dist",
