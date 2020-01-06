@@ -1,7 +1,9 @@
 # json-printer
 
+[![Continuous Deployment](https://github.com/ergebnis/json-printer/workflows/Continuous%20Deployment/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Continuous Integration](https://github.com/ergebnis/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Code Coverage](https://codecov.io/gh/ergebnis/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-printer)
+[![Type Coverage](https://shepherd.dev/github/ergebnis/json-printer/coverage.svg)](https://shepherd.dev/github/ergebnis/json-printer)
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/json-printer/v/stable)](https://packagist.org/packages/ergebnis/json-printer)
 [![Total Downloads](https://poser.pugx.org/ergebnis/json-printer/downloads)](https://packagist.org/packages/ergebnis/json-printer)
 
