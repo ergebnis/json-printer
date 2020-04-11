@@ -1,7 +1,9 @@
 # json-printer
 
-[![Continuous Deployment](https://github.com/ergebnis/json-printer/workflows/Continuous%20Deployment/badge.svg)](https://github.com/ergebnis/json-printer/actions)
-[![Continuous Integration](https://github.com/ergebnis/json-printer/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/json-printer/actions)
+[![Integrate](https://github.com/ergebnis/json-printer/workflows/Integrate/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
+[![Prune](https://github.com/ergebnis/json-printer/workflows/Prune/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
+[![Release](https://github.com/ergebnis/json-printer/workflows/Release/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
+[![Renew](https://github.com/ergebnis/json-printer/workflows/Renew/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
 
 [![Code Coverage](https://codecov.io/gh/ergebnis/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-printer)
 [![Type Coverage](https://shepherd.dev/github/ergebnis/json-printer/coverage.svg)](https://shepherd.dev/github/ergebnis/json-printer)
@@ -86,7 +88,9 @@ Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github
 
 ## License
 
-This package is licensed using the [MIT License](LICENSE.md).
+This package is licensed using the MIT License.
+
+Please have a look at [`LICENSE.md`](LICENSE.md).
 
 ## Credits
 
