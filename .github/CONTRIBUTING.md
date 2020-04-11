@@ -2,11 +2,26 @@
 
 We are using [GitHub Actions](https://github.com/features/actions) as a continuous integration system.
 
-For details, see [`workflows/continuous-integration.yml`](workflows/continuous-integration.yml).
+For details, take a look at the following workflow configuration files:
+
+- [`workflows/integrate.yaml`](workflows/integrate.yaml)
+- [`workflows/prune.yaml`](workflows/prune.yaml)
+- [`workflows/release.yaml`](workflows/release.yaml)
+- [`workflows/renew.yaml`](workflows/renew.yaml)
 
 ## Coding Standards
 
-We are using [`friendsofphp/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to enforce coding standards.
+We are using [`yamllint`](https://github.com/adrienverge/yamllint) to enforce coding standards in YAML files.
+
+If you do not have `yamllint` installed yet, run
+
+```
+$ brew install yamllint
+```
+
+to install `yamllint`.
+
+We are using [`friendsofphp/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to enforce coding standards in PHP files.
 
 Run
 
@@ -40,7 +55,7 @@ $ make static-code-analysis
 
 to run a static code analysis.
 
-We are also using the baseline features of [`phpstan/phpstan`(https://medium.com/@ondrejmirtes/phpstans-baseline-feature-lets-you-hold-new-code-to-a-higher-standard-e77d815a5dff) and [`vimeo/psalm`](https://psalm.dev/docs/running_psalm/dealing_with_code_issues/#using-a-baseline-file).
+We are also using the baseline features of [`phpstan/phpstan`](https://medium.com/@ondrejmirtes/phpstans-baseline-feature-lets-you-hold-new-code-to-a-higher-standard-e77d815a5dff) and [`vimeo/psalm`](https://psalm.dev/docs/running_psalm/dealing_with_code_issues/#using-a-baseline-file).
 
 Run
 
@@ -76,18 +91,6 @@ $ make mutation-tests
 
 to run mutation tests.
 
-## Benchmarks
-
-We are using [`phpbench/phpbench`](http://github.com/phpbench/phpbench) to benchmark performance and memory consumption.
-
-Run
-
-```
-$ make bench
-```
-
-to run all the benchmarks.
-
 ## Extra lazy?
 
 Run
@@ -96,7 +99,7 @@ Run
 $ make
 ```
 
-to enforce coding standards, run a dependency analysis, run a static code analysis, and run tests!
+to enforce coding standards, run a static code analysis, and run tests!
 
 ## Help
 
