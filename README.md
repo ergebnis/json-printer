@@ -1,11 +1,11 @@
 # json-printer
 
-[![Integrate](https://github.com/ergebnis/json-printer/workflows/Integrate/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
-[![Prune](https://github.com/ergebnis/json-printer/workflows/Prune/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
-[![Release](https://github.com/ergebnis/json-printer/workflows/Release/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
-[![Renew](https://github.com/ergebnis/json-printer/workflows/Renew/badge.svg?branch=master)](https://github.com/ergebnis/json-printer/actions)
+[![Integrate](https://github.com/ergebnis/json-printer/workflows/Integrate/badge.svg?branch=main)](https://github.com/ergebnis/json-printer/actions)
+[![Prune](https://github.com/ergebnis/json-printer/workflows/Prune/badge.svg?branch=main)](https://github.com/ergebnis/json-printer/actions)
+[![Release](https://github.com/ergebnis/json-printer/workflows/Release/badge.svg?branch=main)](https://github.com/ergebnis/json-printer/actions)
+[![Renew](https://github.com/ergebnis/json-printer/workflows/Renew/badge.svg?branch=main)](https://github.com/ergebnis/json-printer/actions)
 
-[![Code Coverage](https://codecov.io/gh/ergebnis/json-printer/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-printer)
+[![Code Coverage](https://codecov.io/gh/ergebnis/json-printer/branch/main/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-printer)
 [![Type Coverage](https://shepherd.dev/github/ergebnis/json-printer/coverage.svg)](https://shepherd.dev/github/ergebnis/json-printer)
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/json-printer/v/stable)](https://packagist.org/packages/ergebnis/json-printer)
@@ -84,7 +84,7 @@ Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
-Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/master/CODE_OF_CONDUCT.md).
+Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
