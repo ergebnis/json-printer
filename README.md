@@ -17,7 +17,7 @@ Provides a JSON printer, allowing for flexible indentation.
 
 Run
 
-```shell
+```sh
 $ composer require ergebnis/json-printer
 ```
 

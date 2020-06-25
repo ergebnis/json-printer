@@ -11,7 +11,7 @@ on: # yamllint disable-line rule:truthy
 env:
   MIN_COVERED_MSI: 92
   MIN_MSI: 92
-  REQUIRED_PHP_EXTENSIONS: "mbstring"
+  PHP_EXTENSIONS: "mbstring"
 
 jobs:
   coding-standards:
@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.0"
+        uses: "actions/checkout@v2.3.1"
 
       - name: "Lint YAML files"
         uses: "ibiqlik/action-yamllint@v1"
@@ -42,7 +42,7 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           coverage: "none"
-          extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Validate composer.json and composer.lock"
@@ -104,13 +104,13 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.0"
+        uses: "actions/checkout@v2.3.1"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@v2"
         with:
           coverage: "none"
-          extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
@@ -137,7 +137,7 @@ jobs:
         run: "composer update --no-interaction --no-progress --no-suggest"
 
       - name: "Run maglnet/composer-require-checker"
-        uses: "docker://webfactory/composer-require-checker:2.1.0"
+        run: "tools/composer-require-checker check"
 
   static-code-analysis:
     name: "Static Code Analysis"
@@ -154,13 +154,13 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.0"
+        uses: "actions/checkout@v2.3.1"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@v2"
         with:
           coverage: "none"
-          extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
@@ -232,13 +232,13 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.0"
+        uses: "actions/checkout@v2.3.1"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@v2"
         with:
           coverage: "none"
-          extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
@@ -288,13 +288,13 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.0"
+        uses: "actions/checkout@v2.3.1"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@v2"
         with:
           coverage: "xdebug"
-          extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
@@ -346,13 +346,13 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.0"
+        uses: "actions/checkout@v2.3.1"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@v2"
         with:
           coverage: "xdebug"
-          extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
@@ -401,7 +401,8 @@ jobs:
         github.event.action == 'reopened' ||
         github.event.action == 'synchronize'
       ) && (
-        (github.actor == 'dependabot[bot]' && startsWith(github.event.pull_request.title, 'Build(deps-dev)')) ||
+        (github.actor == 'dependabot[bot]' && startsWith(github.event.pull_request.title, 'composer(deps-dev)')) ||
+        (github.actor == 'dependabot[bot]' && startsWith(github.event.pull_request.title, 'github-actions(deps)')) ||
         (github.actor == 'ergebnis-bot' && github.event.pull_request.title == 'Enhancement: Update license year') ||
         (github.actor == 'localheinz' && contains(github.event.pull_request.labels.*.name, 'merge'))
       )
