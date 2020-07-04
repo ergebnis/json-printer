@@ -11,7 +11,7 @@ code-coverage: vendor ## Collects coverage from running unit tests with phpunit/
 
 .PHONY: coding-standards
 coding-standards: vendor ## Normalizes composer.json with ergebnis/composer-normalize, lints YAML files with yamllint and fixes code style issues with friendsofphp/php-cs-fixer
-	docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ergebnis/composer-normalize-action:0.8.0
+	tools/composer-normalize
 	yamllint -c .yamllint.yaml --strict .
 	mkdir -p .build/php-cs-fixer
 	vendor/bin/php-cs-fixer fix --config=.php_cs --diff --diff-format=udiff --verbose
