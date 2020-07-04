@@ -26,7 +26,6 @@
     "ergebnis/phpstan-rules": "~0.15.0",
     "ergebnis/test-util": "~1.0.0",
     "infection/infection": "~0.13.6",
-    "phpbench/phpbench": "~0.16.10",
     "phpstan/extension-installer": "^1.0.4",
     "phpstan/phpstan": "~0.12.32",
     "phpstan/phpstan-deprecation-rules": "~0.12.4",
