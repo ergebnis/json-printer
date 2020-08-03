@@ -23,7 +23,7 @@
   "require-dev": {
     "ergebnis/license": "^1.0.0",
     "ergebnis/php-cs-fixer-config": "^2.2.1",
-    "ergebnis/phpstan-rules": "~0.15.0",
+    "ergebnis/phpstan-rules": "~0.15.1",
     "ergebnis/test-util": "^1.0.0",
     "infection/infection": "~0.13.6",
     "phpstan/extension-installer": "^1.0.4",
