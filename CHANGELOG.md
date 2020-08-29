@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`3.1.0...main`][3.1.0...main].
+For a full diff see [`3.1.1...main`][3.1.1...main].
+
+## [`3.1.1`][3.1.1]
+
+For a full diff see [`3.1.0...3.1.1`][3.1.0...3.1.1].
+
+### Changed
+
+* Dropped support for PHP 7.1 ([#199]), by [@localheinz]
 
 ## [`3.1.0`][3.1.0]
 
@@ -107,6 +115,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [3.0.1]: https://github.com/ergebnis/json-printer/releases/tag/3.0.1
 [3.0.2]: https://github.com/ergebnis/json-printer/releases/tag/3.0.2
 [3.1.0]: https://github.com/ergebnis/json-printer/releases/tag/3.1.0
+[3.1.1]: https://github.com/ergebnis/json-printer/releases/tag/3.1.1
 
 [8849fc6...1.0.0]: https://github.com/ergebnis/json-printer/compare/8849fc6...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/json-printer/compare/1.0.0...1.1.0
@@ -116,7 +125,8 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [3.0.0...3.0.1]: https://github.com/ergebnis/json-printer/compare/3.0.0...3.0.1
 [3.0.1...3.0.2]: https://github.com/ergebnis/json-printer/compare/3.0.1...3.0.2
 [3.0.2...3.1.0]: https://github.com/ergebnis/json-printer/compare/3.0.2...3.1.0
-[3.1.0...main]: https://github.com/ergebnis/json-printer/compare/3.1.0...main
+[3.1.0...3.1.1]: https://github.com/ergebnis/json-printer/compare/3.1.0...3.1.1
+[3.1.1...main]: https://github.com/ergebnis/json-printer/compare/3.1.1...main
 
 [#33]: https://github.com/ergebnis/json-printer/pull/33
 [#37]: https://github.com/ergebnis/json-printer/pull/37
@@ -126,6 +136,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#72]: https://github.com/ergebnis/json-printer/pull/72
 [#76]: https://github.com/ergebnis/json-printer/pull/77
 [#172]: https://github.com/ergebnis/json-printer/pull/172
+[#199]: https://github.com/ergebnis/json-printer/pull/199
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
