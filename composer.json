@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": "^7.1 || ^8.0",
+    "php": "^7.2 || ^8.0",
     "ext-json": "*",
     "ext-mbstring": "*"
   },
@@ -37,7 +37,7 @@
   },
   "config": {
     "platform": {
-      "php": "7.1.33"
+      "php": "7.2.33"
     },
     "preferred-install": "dist",
     "sort-packages": true
