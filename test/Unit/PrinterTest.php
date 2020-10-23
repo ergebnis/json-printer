@@ -49,8 +49,6 @@ final class PrinterTest extends Framework\TestCase
 
     /**
      * @dataProvider providerInvalidIndent
-     *
-     * @param string $indent
      */
     public function testPrintRejectsInvalidIndent(string $indent): void
     {
@@ -89,8 +87,6 @@ JSON;
 
     /**
      * @dataProvider providerInvalidNewLine
-     *
-     * @param string $newLine
      */
     public function testPrintRejectsInvalidNewLine(string $newLine): void
     {
@@ -190,8 +186,6 @@ JSON;
 
     /**
      * @dataProvider providerNewLine
-     *
-     * @param string $newLine
      */
     public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine): void
     {
@@ -231,8 +225,6 @@ JSON;
 
     /**
      * @see https://nikic.github.io/2011/12/10/PCRE-and-newlines.html
-     *
-     * @return \Generator
      */
     public function providerNewLine(): \Generator
     {
