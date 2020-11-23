@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f7a8b7f9c53820528cc8085d45046949",
+    "content-hash": "8046d78d576c1a736b5333666b5f9959",
     "packages": [],
     "packages-dev": [
         {
@@ -2586,16 +2586,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.56",
+            "version": "0.12.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "007fd5d700c41e1bb27795fae15a2383f8fa4ba1"
+                "reference": "f9909d1d0c44b4cbaf72babcf80e8f14d6fdd55b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/007fd5d700c41e1bb27795fae15a2383f8fa4ba1",
-                "reference": "007fd5d700c41e1bb27795fae15a2383f8fa4ba1",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f9909d1d0c44b4cbaf72babcf80e8f14d6fdd55b",
+                "reference": "f9909d1d0c44b4cbaf72babcf80e8f14d6fdd55b",
                 "shasum": ""
             },
             "require": {
@@ -2638,7 +2638,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-16T22:59:18+00:00"
+            "time": "2020-11-21T12:53:28+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
