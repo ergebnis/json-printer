@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.18.2@19aa905f7c3c7350569999a93c40ae91ae4e1626">
-  <file src="test/Unit/PrinterTest.php">
-    <MixedInferredReturnType occurrences="3">
-      <code>\Generator</code>
-      <code>\Generator</code>
-      <code>\Generator</code>
-    </MixedInferredReturnType>
-  </file>
-</files>
+<files psalm-version="3.18.2@19aa905f7c3c7350569999a93c40ae91ae4e1626"/>
