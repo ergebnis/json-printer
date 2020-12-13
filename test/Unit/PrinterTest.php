@@ -70,6 +70,9 @@ JSON;
         );
     }
 
+    /**
+     * @return \Generator<string, array{0: string}>
+     */
     public function providerInvalidIndent(): \Generator
     {
         $values = [
@@ -110,6 +113,9 @@ JSON;
         );
     }
 
+    /**
+     * @return \Generator<int, array{0: string}>
+     */
     public function providerInvalidNewLine(): \Generator
     {
         $values = [
@@ -225,6 +231,8 @@ JSON;
 
     /**
      * @see https://nikic.github.io/2011/12/10/PCRE-and-newlines.html
+     *
+     * @return \Generator<int, array{0: string}>
      */
     public function providerNewLine(): \Generator
     {
