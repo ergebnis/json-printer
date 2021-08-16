@@ -1,6 +1,7 @@
 # json-printer
 
 [![Integrate](https://github.com/ergebnis/json-printer/workflows/Integrate/badge.svg)](https://github.com/ergebnis/json-printer/actions)
+[![Merge](https://github.com/ergebnis/json-printer/workflows/Merge/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Prune](https://github.com/ergebnis/json-printer/workflows/Prune/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Release](https://github.com/ergebnis/json-printer/workflows/Release/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Renew](https://github.com/ergebnis/json-printer/workflows/Renew/badge.svg)](https://github.com/ergebnis/json-printer/actions)
