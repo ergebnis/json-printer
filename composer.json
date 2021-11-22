@@ -23,14 +23,8 @@
   "require-dev": {
     "ergebnis/license": "^1.1.0",
     "ergebnis/php-cs-fixer-config": "^2.14.0",
-    "ergebnis/phpstan-rules": "~0.15.3",
     "ergebnis/test-util": "^1.5.0",
     "infection/infection": "~0.15.3",
-    "phpstan/extension-installer": "^1.1.0",
-    "phpstan/phpstan": "~0.12.99",
-    "phpstan/phpstan-deprecation-rules": "~0.12.6",
-    "phpstan/phpstan-phpunit": "~0.12.22",
-    "phpstan/phpstan-strict-rules": "~0.12.11",
     "phpunit/phpunit": "^8.5.21",
     "psalm/plugin-phpunit": "~0.16.1",
     "vimeo/psalm": "^4.13.0"
