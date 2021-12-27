@@ -24,13 +24,15 @@
     "ergebnis/license": "^1.1.0",
     "ergebnis/php-cs-fixer-config": "^3.4.0",
     "fakerphp/faker": "^1.17.0",
+    "infection/infection": "~0.25.5",
     "phpunit/phpunit": "^9.5.11",
     "psalm/plugin-phpunit": "~0.16.1",
     "vimeo/psalm": "^4.16.1"
   },
   "config": {
     "allow-plugins": {
-      "composer/package-versions-deprecated": true
+      "composer/package-versions-deprecated": true,
+      "infection/extension-installer": true
     },
     "platform": {
       "php": "7.4.26"
