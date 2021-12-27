@@ -23,7 +23,6 @@
   "require-dev": {
     "ergebnis/license": "^1.1.0",
     "ergebnis/php-cs-fixer-config": "^2.14.0",
-    "ergebnis/test-util": "^1.5.0",
     "fakerphp/faker": "^1.17.0",
     "infection/infection": "~0.15.3",
     "phpunit/phpunit": "^8.5.22",
