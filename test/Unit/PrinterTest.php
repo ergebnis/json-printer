@@ -41,7 +41,7 @@ final class PrinterTest extends Framework\TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(\sprintf(
             '"%s" is not valid JSON.',
-            $json
+            $json,
         ));
 
         $printer->print($json);
@@ -61,12 +61,12 @@ JSON;
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(\sprintf(
             '"%s" is not a valid indent.',
-            $indent
+            $indent,
         ));
 
         $printer->print(
             $json,
-            $indent
+            $indent,
         );
     }
 
@@ -103,13 +103,13 @@ JSON;
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(\sprintf(
             '"%s" is not a valid new-line character sequence.',
-            $newLine
+            $newLine,
         ));
 
         $printer->print(
             $json,
             $indent,
-            $newLine
+            $newLine,
         );
     }
 
@@ -184,7 +184,7 @@ JSON;
 
         $printed = $printer->print(
             $json,
-            $indent
+            $indent,
         );
 
         self::assertSame($expected, $printed);
@@ -215,7 +215,7 @@ JSON;
         $expectedWithNewLine = \str_replace(
             \PHP_EOL,
             $newLine,
-            $expected
+            $expected,
         );
 
         $printer = new Printer();
@@ -223,7 +223,7 @@ JSON;
         $printed = $printer->print(
             $json,
             $indent,
-            $newLine
+            $newLine,
         );
 
         self::assertSame($expectedWithNewLine, $printed);
