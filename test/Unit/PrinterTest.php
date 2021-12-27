@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace Ergebnis\Json\Printer\Test\Unit;
 
 use Ergebnis\Json\Printer\Printer;
-use Ergebnis\Test\Util\Helper;
+use Ergebnis\Json\Printer\Test;
 use PHPUnit\Framework;
 
 /**
@@ -24,7 +24,7 @@ use PHPUnit\Framework;
  */
 final class PrinterTest extends Framework\TestCase
 {
-    use Helper;
+    use Test\Util\Helper;
 
     public function testPrintRejectsInvalidJson(): void
     {
