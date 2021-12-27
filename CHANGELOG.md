@@ -14,7 +14,7 @@ For a full diff see [`3.1.0...3.1.1`][3.1.0...3.1.1].
 
 ### Changed
 
-* Dropped support for PHP 7.1 ([#199]), by [@localheinz]
+- Dropped support for PHP 7.1 ([#199]), by [@localheinz]
 
 ## [`3.1.0`][3.1.0]
 
@@ -22,7 +22,7 @@ For a full diff see [`3.0.2...3.1.0`][3.0.2...3.1.0].
 
 ### Added
 
-* Added support for PHP 8.0 ([#172]), by [@localheinz]
+- Added support for PHP 8.0 ([#172]), by [@localheinz]
 
 ## [`3.0.2`][3.0.2]
 
@@ -30,7 +30,7 @@ For a full diff see [`3.0.1...3.0.2`][3.0.1...3.0.2].
 
 ### Fixed
 
-* Brought back support for PHP 7.1 ([#76]), by [@localheinz]
+- Brought back support for PHP 7.1 ([#76]), by [@localheinz]
 
 ## [`3.0.1`][3.0.1]
 
@@ -38,7 +38,7 @@ For a full diff see [`3.0.0...3.0.1`][3.0.0...3.0.1].
 
 ### Fixed
 
-* Removed an inappropriate `replace` configuration from `composer.json` ([#72]), by [@localheinz]
+- Removed an inappropriate `replace` configuration from `composer.json` ([#72]), by [@localheinz]
 
 ## [`3.0.0`][3.0.0]
 
@@ -46,7 +46,7 @@ For a full diff see [`2.0.1...3.0.0`][2.0.1...3.0.0].
 
 ### Changed
 
-* Renamed vendor namespace `Localheinz` to `Ergebnis` after move to [@ergebnis] ([#67]), by [@localheinz]
+- Renamed vendor namespace `Localheinz` to `Ergebnis` after move to [@ergebnis] ([#67]), by [@localheinz]
 
   Run
 
@@ -80,8 +80,8 @@ For a full diff see [`2.0.1...3.0.0`][2.0.1...3.0.0].
 
 ### Fixed
 
-* Removed support for PHP 7.1 ([#55]), by [@localheinz]
-* Required implicit dependencies `ext-json` and `ext-mbstring` explicitly ([#63]), by [@localheinz]
+- Removed support for PHP 7.1 ([#55]), by [@localheinz]
+- Required implicit dependencies `ext-json` and `ext-mbstring` explicitly ([#63]), by [@localheinz]
 
 ## [`2.0.1`][2.0.1]
 
@@ -89,7 +89,7 @@ For a full diff see [`2.0.0...2.0.1`][2.0.0...2.0.1].
 
 ### Fixed
 
-* Started rejecting mixed tabs and spaces as indent ([#37]), by [@localheinz]
+- Started rejecting mixed tabs and spaces as indent ([#37]), by [@localheinz]
 
 ## [`2.0.0`][2.0.0]
 
@@ -97,7 +97,7 @@ For a full diff see [`1.1.0...2.0.0`][1.1.0...2.0.0].
 
 ### Changed
 
-* Allowed specifying new-line character ([#33]), by [@localheinz]
+- Allowed specifying new-line character ([#33]), by [@localheinz]
 
 ## [`1.1.0`][1.1.0]
 
