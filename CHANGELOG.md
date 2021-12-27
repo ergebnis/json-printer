@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 For a full diff see [`3.1.1...main`][3.1.1...main].
 
 - Dropped support for PHP 7.2 ([#404]), by [@localheinz]
+- Dropped support for PHP 7.3 ([#410]), by [@localheinz]
 
 ## [`3.1.1`][3.1.1]
 
@@ -140,6 +141,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#172]: https://github.com/ergebnis/json-printer/pull/172
 [#199]: https://github.com/ergebnis/json-printer/pull/199
 [#404]: https://github.com/ergebnis/json-printer/pull/404
+[#410]: https://github.com/ergebnis/json-printer/pull/410
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
