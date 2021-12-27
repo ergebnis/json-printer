@@ -30,6 +30,9 @@
     "vimeo/psalm": "^4.14.0"
   },
   "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true
+    },
     "platform": {
       "php": "7.2.33"
     },
