@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Ergebnis\Json\Printer\Test\Unit;
 
 use Ergebnis\Json\Printer\Printer;
-use Ergebnis\Json\Printer\PrinterInterface;
 use Ergebnis\Test\Util\Helper;
 use PHPUnit\Framework;
 
@@ -26,11 +25,6 @@ use PHPUnit\Framework;
 final class PrinterTest extends Framework\TestCase
 {
     use Helper;
-
-    public function testImplementsPrinterInterface(): void
-    {
-        self::assertClassImplementsInterface(PrinterInterface::class, Printer::class);
-    }
 
     public function testPrintRejectsInvalidJson(): void
     {
