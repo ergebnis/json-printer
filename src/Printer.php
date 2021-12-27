@@ -41,21 +41,21 @@ final class Printer implements PrinterInterface
         if (null === \json_decode($json) && \JSON_ERROR_NONE !== \json_last_error()) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not valid JSON.',
-                $json
+                $json,
             ));
         }
 
         if (1 !== \preg_match('/^( +|\t+)$/', $indent)) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not a valid indent.',
-                $indent
+                $indent,
             ));
         }
 
         if (1 !== \preg_match('/^(?>\r\n|\n|\r)$/', $newLine)) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not a valid new-line character sequence.',
-                $newLine
+                $newLine,
             ));
         }
 
