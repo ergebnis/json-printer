@@ -24,7 +24,6 @@
     "ergebnis/license": "^1.1.0",
     "ergebnis/php-cs-fixer-config": "^2.14.0",
     "fakerphp/faker": "^1.17.0",
-    "infection/infection": "~0.15.3",
     "phpunit/phpunit": "^8.5.22",
     "psalm/plugin-phpunit": "~0.16.1",
     "vimeo/psalm": "^4.16.1"
