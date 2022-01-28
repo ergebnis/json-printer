@@ -27,7 +27,7 @@
     "infection/infection": "~0.26.3",
     "phpunit/phpunit": "^9.5.13",
     "psalm/plugin-phpunit": "~0.16.1",
-    "vimeo/psalm": "^4.18.1"
+    "vimeo/psalm": "^4.19.0"
   },
   "config": {
     "allow-plugins": {
