@@ -25,7 +25,7 @@
     "ergebnis/php-cs-fixer-config": "^4.2.0",
     "fakerphp/faker": "^1.19.0",
     "infection/infection": "~0.26.6",
-    "phpunit/phpunit": "^9.5.17",
+    "phpunit/phpunit": "^9.5.18",
     "psalm/plugin-phpunit": "~0.16.1",
     "vimeo/psalm": "^4.22.0"
   },
