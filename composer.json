@@ -30,7 +30,7 @@
     "fakerphp/faker": "^1.20.0",
     "infection/infection": "~0.26.6",
     "phpunit/phpunit": "^9.5.26",
-    "psalm/plugin-phpunit": "~0.18.1",
+    "psalm/plugin-phpunit": "~0.18.3",
     "vimeo/psalm": "^4.30.0"
   },
   "autoload": {
