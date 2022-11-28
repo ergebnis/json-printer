@@ -38,7 +38,14 @@ final class Printer implements PrinterInterface
      */
     public function print(string $json, string $indent = '    ', string $newLine = \PHP_EOL): string
     {
-        if (null === \json_decode($json) && \JSON_ERROR_NONE !== \json_last_error()) {
+        try {
+            \json_decode(
+                $json,
+                false,
+                512,
+                \JSON_THROW_ON_ERROR,
+            );
+        } catch (\JsonException $exception) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not valid JSON.',
                 $json,
