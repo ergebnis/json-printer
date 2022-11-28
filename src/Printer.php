@@ -48,7 +48,7 @@ final class Printer implements PrinterInterface
                 512,
                 \JSON_THROW_ON_ERROR,
             );
-        } catch (\JsonException $exception) {
+        } catch (\JsonException) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not valid JSON.',
                 $json,
