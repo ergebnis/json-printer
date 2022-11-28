@@ -20,7 +20,7 @@
     "source": "https://github.com/ergebnis/json-printer"
   },
   "require": {
-    "php": "^7.4 || ^8.0",
+    "php": "^8.0",
     "ext-json": "*",
     "ext-mbstring": "*"
   },
@@ -49,7 +49,7 @@
       "infection/extension-installer": true
     },
     "platform": {
-      "php": "7.4.26"
+      "php": "8.0.25"
     },
     "preferred-install": "dist",
     "sort-packages": true

@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`3.2.0...main`][3.2.0...main].
 
+### Changed
+
+- Dropped support for PHP 7.4 ([#520]), by [@localheinz]
+
 ## [`3.2.0`][3.2.0]
 
 For a full diff see [`3.1.1...3.2.0`][3.1.1...3.2.0].
@@ -150,6 +154,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#199]: https://github.com/ergebnis/json-printer/pull/199
 [#404]: https://github.com/ergebnis/json-printer/pull/404
 [#410]: https://github.com/ergebnis/json-printer/pull/410
+[#520]: https://github.com/ergebnis/json-printer/pull/520
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
