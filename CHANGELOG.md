@@ -12,6 +12,8 @@ For a full diff see [`3.2.0...main`][3.2.0...main].
 
 For a full diff see [`3.1.1...3.2.0`][3.1.1...3.2.0].
 
+### Changed
+
 - Dropped support for PHP 7.2 ([#404]), by [@localheinz]
 - Dropped support for PHP 7.3 ([#410]), by [@localheinz]
 
