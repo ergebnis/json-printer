@@ -72,7 +72,7 @@ JSON;
         $values = [
             'string-contains-line-feed' => " \n ",
             'string-mixed-space-and-tab' => " \t",
-            'string-not-whitespace' => self::faker()->sentence,
+            'string-not-whitespace' => self::faker()->sentence(),
         ];
 
         foreach ($values as $key => $value) {

@@ -19,7 +19,7 @@ Provides a JSON printer, allowing for flexible indentation.
 Run
 
 ```sh
-$ composer require ergebnis/json-printer
+composer require ergebnis/json-printer
 ```
 
 ## Usage
@@ -99,6 +99,6 @@ The [`Printer`](src/Printer.php) is adopted from [`Composer\Json\JsonFormatter`]
 
 The [`PrinterTest`](test/Unit/PrinterTest.php) is inspired by [`Composer\Test\Json\JsonFormatterTest`](https://github.com/composer/composer/blob/1.6.0/tests/Composer/Test/Json/JsonFormatterTest.php) (originally licensed under MIT by [Nils Adermann](https://github.com/naderman) and [Jordi Boggiano](https://github.com/seldaek)), as well as [`ZendTest\Json\JsonTest`](https://github.com/zendframework/zend-json/blob/release-3.0.0/test/JsonTest.php) (originally licensed under New BSD License).
 
-## Curious what I am building?
+## Curious what I am up to?
 
-:mailbox_with_mail: [Subscribe to my list](https://localheinz.com/projects/), and I will occasionally send you an email to let you know what I am working on.
+Follow me on [Twitter](https://twitter.com/localheinz)!
