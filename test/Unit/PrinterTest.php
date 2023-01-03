@@ -314,6 +314,29 @@ JSON;
         self::assertSame($json, $printed);
     }
 
+    public function testPrintRemovesTrailingEmptyLines(): void
+    {
+        $json = <<<'JSON'
+{
+    "name": "Andreas Möller",
+    "emoji": "🤓",
+    "urls": [
+        "https://localheinz.com",
+        "https://github.com/localheinz",
+        "https://twitter.com/localheinz"
+    ]
+}
+
+
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print($json);
+
+        self::assertSame(\trim($json), $printed);
+    }
+
     public function testPrintCollapsesEmptyArray(): void
     {
         $json = <<<'JSON'
