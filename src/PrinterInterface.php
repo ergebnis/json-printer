@@ -18,5 +18,9 @@ interface PrinterInterface
     /**
      * @throws \InvalidArgumentException
      */
-    public function print(string $json, string $indent = '    ', string $newLine = \PHP_EOL): string;
+    public function print(
+        string $json,
+        string $indent = '    ',
+        string $newLine = \PHP_EOL,
+    ): string;
 }
