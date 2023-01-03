@@ -126,7 +126,7 @@ final class Printer implements PrinterInterface
             }
 
             /**
-             * Output a new line after "," character and and indent the next line.
+             * Output a new line after "," character and indent the next line.
              */
             if (',' === $character) {
                 $printed .= $character . $newLine . \str_repeat($indent, $indentLevel);
