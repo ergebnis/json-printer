@@ -67,7 +67,7 @@ JSON;
     /**
      * @return \Generator<string, array{0: string}>
      */
-    public function providerInvalidIndent(): \Generator
+    public static function providerInvalidIndent(): \Generator
     {
         $values = [
             'string-contains-line-feed' => " \n ",
@@ -110,7 +110,7 @@ JSON;
     /**
      * @return \Generator<int, array{0: string}>
      */
-    public function providerInvalidNewLine(): \Generator
+    public static function providerInvalidNewLine(): \Generator
     {
         $values = [
             "\t",
@@ -228,7 +228,7 @@ JSON;
      *
      * @return \Generator<int, array{0: string}>
      */
-    public function providerNewLine(): \Generator
+    public static function providerNewLine(): \Generator
     {
         $values = [
             "\r\n",
