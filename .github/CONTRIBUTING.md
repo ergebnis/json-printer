@@ -6,7 +6,6 @@ For details, take a look at the following workflow configuration files:
 
 - [`workflows/integrate.yaml`](workflows/integrate.yaml)
 - [`workflows/merge.yaml`](workflows/merge.yaml)
-- [`workflows/prune.yaml`](workflows/prune.yaml)
 - [`workflows/release.yaml`](workflows/release.yaml)
 - [`workflows/renew.yaml`](workflows/renew.yaml)
 - [`workflows/triage.yaml`](workflows/triage.yaml)
@@ -46,6 +45,18 @@ make dependency-analysis
 ```
 
 to run a dependency analysis.
+
+## Mutation Tests
+
+We are using [`infection/infection`](https://github.com/infection/infection) to ensure a minimum quality of the tests.
+
+Enable `Xdebug` and run
+
+```sh
+make mutation-tests
+```
+
+to run mutation tests.
 
 ## Refactoring
 
@@ -106,18 +117,6 @@ make tests
 ```
 
 to run all the tests.
-
-## Mutation Tests
-
-We are using [`infection/infection`](https://github.com/infection/infection) to ensure a minimum quality of the tests.
-
-Enable `Xdebug` and run
-
-```sh
-make mutation-tests
-```
-
-to run mutation tests.
 
 ## Extra lazy?
 

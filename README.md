@@ -2,7 +2,6 @@
 
 [![Integrate](https://github.com/ergebnis/json-printer/workflows/Integrate/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Merge](https://github.com/ergebnis/json-printer/workflows/Merge/badge.svg)](https://github.com/ergebnis/json-printer/actions)
-[![Prune](https://github.com/ergebnis/json-printer/workflows/Prune/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Release](https://github.com/ergebnis/json-printer/workflows/Release/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 [![Renew](https://github.com/ergebnis/json-printer/workflows/Renew/badge.svg)](https://github.com/ergebnis/json-printer/actions)
 
@@ -11,6 +10,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/json-printer/v/stable)](https://packagist.org/packages/ergebnis/json-printer)
 [![Total Downloads](https://poser.pugx.org/ergebnis/json-printer/downloads)](https://packagist.org/packages/ergebnis/json-printer)
+[![Monthly Downloads](http://poser.pugx.org/ergebnis/php-package-template/d/monthly)](https://packagist.org/packages/ergebnis/php-package-template)
 
 Provides a JSON printer, allowing for flexible indentation.
 
@@ -101,4 +101,4 @@ The [`PrinterTest`](test/Unit/PrinterTest.php) is inspired by [`Composer\Test\Js
 
 ## Curious what I am up to?
 
-Follow me on [Twitter](https://twitter.com/localheinz)!
+Follow me on [Twitter](https://twitter.com/intent/follow?screen_name=localheinz)!
