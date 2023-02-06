@@ -7,14 +7,14 @@ code-coverage: vendor ## Collects coverage from running unit tests with phpunit/
 	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml --coverage-text
 
 .PHONY: coding-standards
-coding-standards: vendor ## Lints YAML files with yamllint, normalizes composer.json with ergebnis/composer-normalize, and fixes code style issues with friendsofphp/php-cs-fixer
+coding-standards: phive vendor ## Lints YAML files with yamllint, normalizes composer.json with ergebnis/composer-normalize, and fixes code style issues with friendsofphp/php-cs-fixer
 	yamllint -c .yamllint.yaml --strict .
-	composer normalize
+	.phive/composer-normalize
 	mkdir -p .build/php-cs-fixer
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
 
 .PHONY: dependency-analysis
-dependency-analysis: vendor ## Runs a dependency analysis with maglnet/composer-require-checker
+dependency-analysis: phive vendor ## Runs a dependency analysis with maglnet/composer-require-checker
 	.phive/composer-require-checker check --config-file=$(shell pwd)/composer-require-checker.json
 
 .PHONY: help
@@ -25,6 +25,11 @@ help: ## Displays this list of targets with descriptions
 mutation-tests: vendor ## Runs mutation tests with infection/infection
 	mkdir -p .build/infection
 	vendor/bin/infection --configuration=infection.json
+
+.PHONY: phive
+phive: .phive## Installs dependencies with phive
+	mkdir -p .build/phive
+	PHIVE_HOME=.build/phive phive install --trust-gpg-keys 0x033E5F8D801A2F8D,0xC00543248C87FB13
 
 .PHONY: refactoring
 refactoring: vendor ## Runs automated refactoring with rector/rector
