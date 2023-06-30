@@ -24,5 +24,5 @@ return static function (Config\RectorConfig $rectorConfig): void {
         __DIR__ . '/test/',
     ]);
 
-    $rectorConfig->phpVersion(Core\ValueObject\PhpVersion::PHP_80);
+    $rectorConfig->phpVersion(Core\ValueObject\PhpVersion::PHP_81);
 };
