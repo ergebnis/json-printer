@@ -37,7 +37,7 @@ final class PrinterTest extends Framework\TestCase
         $printer->print($json);
     }
 
-    #[Framework\Attributes\DataProvider('providerInvalidIndent')]
+    #[Framework\Attributes\DataProvider('provideInvalidIndent')]
     public function testPrintRejectsInvalidIndent(string $indent): void
     {
         $json = <<<'JSON'
@@ -61,7 +61,7 @@ JSON;
     /**
      * @return \Generator<string, array{0: string}>
      */
-    public static function providerInvalidIndent(): \Generator
+    public static function provideInvalidIndent(): \Generator
     {
         $values = [
             'string-contains-line-feed' => " \n ",
@@ -76,7 +76,7 @@ JSON;
         }
     }
 
-    #[Framework\Attributes\DataProvider('providerInvalidNewLine')]
+    #[Framework\Attributes\DataProvider('provideInvalidNewLine')]
     public function testPrintRejectsInvalidNewLine(string $newLine): void
     {
         $json = <<<'JSON'
@@ -102,7 +102,7 @@ JSON;
     /**
      * @return \Generator<int, array{0: string}>
      */
-    public static function providerInvalidNewLine(): \Generator
+    public static function provideInvalidNewLine(): \Generator
     {
         $values = [
             "\t",
@@ -176,7 +176,7 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    #[Framework\Attributes\DataProvider('providerNewLine')]
+    #[Framework\Attributes\DataProvider('provideNewLine')]
     public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine): void
     {
         $json = <<<'JSON'
@@ -218,7 +218,7 @@ JSON;
      *
      * @return \Generator<int, array{0: string}>
      */
-    public static function providerNewLine(): \Generator
+    public static function provideNewLine(): \Generator
     {
         $values = [
             "\r\n",

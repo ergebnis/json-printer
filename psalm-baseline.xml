@@ -7,9 +7,9 @@
   </file>
   <file src="test/Unit/PrinterTest.php">
     <PossiblyUnusedMethod>
-      <code>providerInvalidIndent</code>
-      <code>providerInvalidNewLine</code>
-      <code>providerNewLine</code>
+      <code>provideInvalidIndent</code>
+      <code>provideInvalidNewLine</code>
+      <code>provideNewLine</code>
     </PossiblyUnusedMethod>
   </file>
 </files>
