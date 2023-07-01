@@ -17,11 +17,7 @@ use Ergebnis\Json\Printer\Printer;
 use Ergebnis\Json\Printer\Test;
 use PHPUnit\Framework;
 
-/**
- * @internal
- *
- * @covers \Ergebnis\Json\Printer\Printer
- */
+#[Framework\Attributes\CoversClass(Printer::class)]
 final class PrinterTest extends Framework\TestCase
 {
     use Test\Util\Helper;
@@ -41,9 +37,7 @@ final class PrinterTest extends Framework\TestCase
         $printer->print($json);
     }
 
-    /**
-     * @dataProvider providerInvalidIndent
-     */
+    #[Framework\Attributes\DataProvider('providerInvalidIndent')]
     public function testPrintRejectsInvalidIndent(string $indent): void
     {
         $json = <<<'JSON'
@@ -82,9 +76,7 @@ JSON;
         }
     }
 
-    /**
-     * @dataProvider providerInvalidNewLine
-     */
+    #[Framework\Attributes\DataProvider('providerInvalidNewLine')]
     public function testPrintRejectsInvalidNewLine(string $newLine): void
     {
         $json = <<<'JSON'
@@ -184,9 +176,7 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    /**
-     * @dataProvider providerNewLine
-     */
+    #[Framework\Attributes\DataProvider('providerNewLine')]
     public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine): void
     {
         $json = <<<'JSON'

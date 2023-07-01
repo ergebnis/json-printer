@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 use Rector\Config;
 use Rector\Core;
+use Rector\Php81;
+use Rector\PHPUnit;
 
 return static function (Config\RectorConfig $rectorConfig): void {
     $rectorConfig->cacheDirectory(__DIR__ . '/.build/rector/');
@@ -25,4 +27,12 @@ return static function (Config\RectorConfig $rectorConfig): void {
     ]);
 
     $rectorConfig->phpVersion(Core\ValueObject\PhpVersion::PHP_81);
+
+    $rectorConfig->rules([
+        Php81\Rector\Property\ReadOnlyPropertyRector::class,
+    ]);
+
+    $rectorConfig->sets([
+        PHPUnit\Set\PHPUnitSetList::PHPUNIT_100,
+    ]);
 };

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.7.7@e028ba46ba0d7f9a78bc3201c251e137383e145f">
+<files psalm-version="5.13.1@086b94371304750d1c673315321a55d15fc59015">
   <file src="src/Printer.php">
     <UnusedFunctionCall>
       <code>\json_decode</code>
     </UnusedFunctionCall>
+  </file>
+  <file src="test/Unit/PrinterTest.php">
+    <PossiblyUnusedMethod>
+      <code>providerInvalidIndent</code>
+      <code>providerInvalidNewLine</code>
+      <code>providerNewLine</code>
+    </PossiblyUnusedMethod>
   </file>
 </files>
