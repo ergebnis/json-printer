@@ -49,13 +49,17 @@ but we want to indent it with 2 spaces (or tabs).
 This is where `Ergebnis\Json\Printer\Printer` comes in
 
 ```php
-use Ergebnis\Json\Printer\Printer;
+<?php
 
-$printer = new Printer();
+declare(strict_types=1);
+
+use Ergebnis\Json\Printer;
+
+$printer = new Printer\Printer();
 
 $printed = $printer->print(
     $json,
-    '  '
+    '  ',
 );
 ```
 
@@ -86,6 +90,10 @@ Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 ## Code of Conduct
 
 Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/main/CODE_OF_CONDUCT.md).
+
+## Security Policy
+
+Please have a look at [`SECURITY.md`](.github/SECURITY.md).
 
 ## License
 
