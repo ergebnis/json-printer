@@ -26,10 +26,14 @@ $license = License\Type\MIT::markdown(
 
 $license->save();
 
-$config = PhpCsFixer\Config\Factory::fromRuleSet(new PhpCsFixer\Config\RuleSet\Php81($license->header()), [
-    'escape_implicit_backslashes' => false,
-    'mb_str_functions' => false,
-]);
+$ruleSet = PhpCsFixer\Config\RuleSet\Php81::create()
+    ->withHeader($license->header())
+    ->withRules(PhpCsFixer\Config\Rules::fromArray([
+        'escape_implicit_backslashes' => false,
+        'mb_str_functions' => false,
+    ]));
+
+$config = PhpCsFixer\Config\Factory::fromRuleSet($ruleSet);
 
 $config->getFinder()
     ->exclude([
