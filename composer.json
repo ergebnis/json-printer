@@ -18,7 +18,8 @@
   "homepage": "https://github.com/ergebnis/json-printer",
   "support": {
     "issues": "https://github.com/ergebnis/json-printer/issues",
-    "source": "https://github.com/ergebnis/json-printer"
+    "source": "https://github.com/ergebnis/json-printer",
+    "security": "https://github.com/ergebnis/json-printer/blob/main/.github/SECURITY.md"
   },
   "require": {
     "php": "~8.1.0 || ~8.2.0",
