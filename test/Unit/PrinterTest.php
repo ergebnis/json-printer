@@ -465,4 +465,42 @@ JSON;
 
         self::assertSame($expected, $printed);
     }
+
+    /**
+     * @see https://github.com/ergebnis/json-printer/issues/675
+     */
+    public function testPrintPrintsJsonWhenValueContainsJsonString(): void
+    {
+        $json = <<<'JSON'
+{
+  "type": "auth-token",
+  "error": "Server error: `POST https://xxxx.xxxxx.net/sms/send` resulted in a `500 Internal Server Error` response:\n{\"status\":106000,\"description\":\"Unknown error\",\"translatedDescription\":null}",
+  "queue": "auth",
+  "token": "V25EP",
+  "origin": "foobar",
+  "identifier": null,
+  "recipients": [
+    {
+      "email": "blabla@hotmail.com",
+      "mobile": "11111111",
+      "mobile_country_code": "0047"
+    }
+  ],
+  "request_ip": "11.111.11.111",
+  "destination": "004711111111",
+  "consignor_id": null,
+  "sms_error_code": null,
+  "sms_error_description": null
+}
+JSON;
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $json,
+            \str_repeat(' ', 2),
+        );
+
+        self::assertSame($json, $printed);
+    }
 }
