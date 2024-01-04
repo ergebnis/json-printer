@@ -77,7 +77,7 @@ repository:
   archived: false
   default_branch: "main"
   delete_branch_on_merge: true
-  description: ":page_with_curl: Provides a JSON printer, allowing for flexible indentation."
+  description: "📃 Provides a composer package with a JSON printer, allowing for flexible indentation."
   enable_automated_security_fixes: true
   enable_vulnerability_alerts: true
   has_discussions: false

@@ -185,9 +185,6 @@ jobs:
       - name: "Run ergebnis/composer-normalize"
         run: ".phive/composer-normalize --ansi --dry-run"
 
-      - name: "Create cache directory for friendsofphp/php-cs-fixer"
-        run: "mkdir -p .build/php-cs-fixer/"
-
       - name: "Cache cache directory for friendsofphp/php-cs-fixer"
         uses: "actions/cache@v3.3.2"
         with:
@@ -198,7 +195,7 @@ jobs:
             php-${{ matrix.php-version }}-php-cs-fixer-
 
       - name: "Run friendsofphp/php-cs-fixer"
-        run: "vendor/bin/php-cs-fixer fix --ansi --config=.php-cs-fixer.php --diff --dry-run --verbose"
+        run: "vendor/bin/php-cs-fixer fix --ansi --config=.php-cs-fixer.php --diff --dry-run --show-progress=dots --verbose"
 
   dependency-analysis:
     name: "Dependency Analysis"
@@ -355,9 +352,6 @@ jobs:
         with:
           dependencies: "${{ matrix.dependencies }}"
 
-      - name: "Create cache directory for rector/rector"
-        run: "mkdir -p .build/rector/"
-
       - name: "Cache cache directory for rector/rector"
         uses: "actions/cache@v3.3.2"
         with:
@@ -466,9 +460,6 @@ jobs:
         uses: "ergebnis/.github/actions/composer/install@1.9.0"
         with:
           dependencies: "${{ matrix.dependencies }}"
-
-      - name: "Create cache directory for vimeo/psalm"
-        run: "mkdir -p .build/psalm/"
 
       - name: "Run vimeo/psalm"
         run: "vendor/bin/psalm --config=psalm.xml --output-format=github --shepherd --show-info=false --stats --threads=4"
