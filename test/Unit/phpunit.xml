@@ -1,38 +1,37 @@
-<?xml version="1.0"?>
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../vendor/phpunit/phpunit/phpunit.xsd"
     beStrictAboutChangesToGlobalState="true"
-    beStrictAboutCoverageMetadata="true"
+    beStrictAboutCoversAnnotation="true"
     beStrictAboutOutputDuringTests="true"
+    beStrictAboutResourceUsageDuringSmallTests="true"
     beStrictAboutTestsThatDoNotTestAnything="true"
+    beStrictAboutTodoAnnotatedTests="true"
     bootstrap="../../vendor/autoload.php"
-    cacheDirectory="../../.build/phpunit/unit/"
-    cacheResult="true"
     colors="true"
     columns="max"
-    displayDetailsOnIncompleteTests="true"
-    displayDetailsOnSkippedTests="true"
-    displayDetailsOnTestsThatTriggerDeprecations="true"
-    displayDetailsOnTestsThatTriggerErrors="true"
-    displayDetailsOnTestsThatTriggerNotices="true"
-    displayDetailsOnTestsThatTriggerWarnings="true"
-    executionOrder="random"
-    requireCoverageMetadata="true"
+    cacheResult="true"
+    cacheResultFile="../../.build/phpunit/cache.unit"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
     stopOnError="false"
     stopOnFailure="false"
     stopOnIncomplete="false"
     stopOnSkipped="false"
+    verbose="true"
 >
-    <coverage includeUncoveredFiles="true"/>
-    <extensions>
-        <bootstrap class="Ergebnis\PHPUnit\SlowTestDetector\Extension"/>
-    </extensions>
-    <source>
+    <coverage>
         <include>
             <directory suffix=".php">../../src/</directory>
         </include>
-    </source>
+        <exclude>
+            <directory suffix=".php">../../src/Subscriber/</directory>
+        </exclude>
+    </coverage>
+    <extensions>
+        <extension class="Ergebnis\PHPUnit\SlowTestDetector\Extension"/>
+    </extensions>
     <testsuites>
         <testsuite name="Unit Tests">
             <directory>.</directory>

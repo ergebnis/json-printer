@@ -17,7 +17,9 @@ use Ergebnis\Json\Printer\Printer;
 use Ergebnis\Json\Printer\Test;
 use PHPUnit\Framework;
 
-#[Framework\Attributes\CoversClass(Printer::class)]
+/**
+ * @covers \Ergebnis\Json\Printer\Printer
+ */
 final class PrinterTest extends Framework\TestCase
 {
     use Test\Util\Helper;
@@ -37,7 +39,9 @@ final class PrinterTest extends Framework\TestCase
         $printer->print($json);
     }
 
-    #[Framework\Attributes\DataProvider('provideInvalidIndent')]
+    /**
+     * @dataProvider provideInvalidIndent
+     */
     public function testPrintRejectsInvalidIndent(string $indent): void
     {
         $json = <<<'JSON'
@@ -61,7 +65,7 @@ JSON;
     /**
      * @return \Generator<string, array{0: string}>
      */
-    public static function provideInvalidIndent(): \Generator
+    public static function provideInvalidIndent(): iterable
     {
         $values = [
             'string-contains-line-feed' => " \n ",
@@ -76,7 +80,9 @@ JSON;
         }
     }
 
-    #[Framework\Attributes\DataProvider('provideInvalidNewLine')]
+    /**
+     * @dataProvider provideInvalidNewLine
+     */
     public function testPrintRejectsInvalidNewLine(string $newLine): void
     {
         $json = <<<'JSON'
@@ -102,7 +108,7 @@ JSON;
     /**
      * @return \Generator<int, array{0: string}>
      */
-    public static function provideInvalidNewLine(): \Generator
+    public static function provideInvalidNewLine(): iterable
     {
         $values = [
             "\t",
@@ -176,7 +182,9 @@ JSON;
         self::assertSame($expected, $printed);
     }
 
-    #[Framework\Attributes\DataProvider('provideNewLine')]
+    /**
+     * @dataProvider provideNewLine
+     */
     public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine): void
     {
         $json = <<<'JSON'
@@ -218,7 +226,7 @@ JSON;
      *
      * @return \Generator<int, array{0: string}>
      */
-    public static function provideNewLine(): \Generator
+    public static function provideNewLine(): iterable
     {
         $values = [
             "\r\n",
