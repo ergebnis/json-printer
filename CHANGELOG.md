@@ -11,6 +11,7 @@ For a full diff see [`3.4.0...main`][3.4.0...main].
 ### Changed
 
 - Added support for PHP 8.0 ([#752]), by [@localheinz]
+- Added support for PHP 7.4 ([#753]), by [@localheinz]
 
 ## [`3.4.0`][3.4.0]
 
@@ -182,6 +183,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#625]: https://github.com/ergebnis/json-printer/pull/625
 [#682]: https://github.com/ergebnis/json-printer/pull/682
 [#752]: https://github.com/ergebnis/json-printer/pull/752
+[#753]: https://github.com/ergebnis/json-printer/pull/753
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz

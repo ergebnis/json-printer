@@ -22,7 +22,7 @@
     "security": "https://github.com/ergebnis/json-printer/blob/main/.github/SECURITY.md"
   },
   "require": {
-    "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
+    "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
     "ext-json": "*",
     "ext-mbstring": "*"
   },
@@ -32,7 +32,7 @@
     "ergebnis/php-cs-fixer-config": "^6.20.0",
     "ergebnis/phpunit-slow-test-detector": "^2.9.0",
     "fakerphp/faker": "^1.23.1",
-    "infection/infection": "~0.26.19",
+    "infection/infection": "~0.26.6",
     "phpunit/phpunit": "^9.6.16",
     "psalm/plugin-phpunit": "~0.18.4",
     "rector/rector": "~0.19.2",
@@ -57,7 +57,7 @@
       "abandoned": "report"
     },
     "platform": {
-      "php": "8.0.30"
+      "php": "7.4.33"
     },
     "preferred-install": "dist",
     "sort-packages": true

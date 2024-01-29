@@ -21,6 +21,6 @@ interface PrinterInterface
     public function print(
         string $json,
         string $indent = '    ',
-        string $newLine = \PHP_EOL,
+        string $newLine = \PHP_EOL
     ): string;
 }
