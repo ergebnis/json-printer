@@ -35,7 +35,7 @@
     "infection/infection": "~0.26.6",
     "phpunit/phpunit": "^9.6.19",
     "psalm/plugin-phpunit": "~0.19.0",
-    "rector/rector": "~1.2.8",
+    "rector/rector": "~1.2.9",
     "vimeo/psalm": "^5.26.1"
   },
   "autoload": {
