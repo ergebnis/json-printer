@@ -29,7 +29,6 @@ $license->save();
 $ruleSet = PhpCsFixer\Config\RuleSet\Php74::create()
     ->withHeader($license->header())
     ->withRules(PhpCsFixer\Config\Rules::fromArray([
-        'escape_implicit_backslashes' => false,
         'mb_str_functions' => false,
     ]));
 
