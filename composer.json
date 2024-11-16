@@ -38,7 +38,7 @@
     "phpstan/phpstan-deprecation-rules": "^1.2.1",
     "phpstan/phpstan-phpunit": "^1.4.1",
     "phpstan/phpstan-strict-rules": "^1.6.1",
-    "phpunit/phpunit": "^9.6.19",
+    "phpunit/phpunit": "^9.6.21",
     "rector/rector": "^1.2.10"
   },
   "autoload": {
