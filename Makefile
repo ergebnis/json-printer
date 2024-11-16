@@ -2,7 +2,7 @@
 it: refactoring coding-standards security-analysis static-code-analysis tests ## Runs the refactoring, coding-standards, security-analysis, static-code-analysis, and tests targets
 
 .PHONY: code-coverage
-code-coverage: vendor ## Collects coverage from running unit tests with phpunit/phpunit
+code-coverage: vendor ## Collects code coverage from running unit tests with phpunit/phpunit
 	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml --coverage-text
 
 .PHONY: coding-standards
@@ -36,14 +36,14 @@ security-analysis: vendor ## Runs a security analysis with composer
 	composer audit
 
 .PHONY: static-code-analysis
-static-code-analysis: vendor ## Runs a static code analysis with vimeo/psalm
-	vendor/bin/psalm --config=psalm.xml --clear-cache
-	vendor/bin/psalm --config=psalm.xml --show-info=false --stats --threads=4
+static-code-analysis: vendor ## Runs a static code analysis with phpstan/phpstan
+	vendor/bin/phpstan clear-result-cache --configuration=phpstan.neon
+	vendor/bin/phpstan --configuration=phpstan.neon --memory-limit=-1
 
 .PHONY: static-code-analysis-baseline
-static-code-analysis-baseline: vendor ## Generates a baseline for static code analysis with vimeo/psalm
-	vendor/bin/psalm --config=psalm.xml --clear-cache
-	vendor/bin/psalm --config=psalm.xml --set-baseline=psalm-baseline.xml
+static-code-analysis-baseline: vendor ## Generates a baseline for static code analysis with phpstan/phpstan
+	vendor/bin/phpstan clear-result-cache --configuration=phpstan.neon
+	vendor/bin/phpstan --allow-empty-baseline --configuration=phpstan.neon --generate-baseline=phpstan-baseline.neon --memory-limit=-1
 
 .PHONY: tests
 tests: vendor ## Runs unit tests with phpunit/phpunit
