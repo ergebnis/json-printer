@@ -27,6 +27,7 @@
     "ext-mbstring": "*"
   },
   "require-dev": {
+    "ergebnis/composer-normalize": "^2.44.0",
     "ergebnis/data-provider": "^3.3.0",
     "ergebnis/license": "^2.5.0",
     "ergebnis/php-cs-fixer-config": "^6.37.0",
@@ -54,6 +55,7 @@
   "config": {
     "allow-plugins": {
       "composer/package-versions-deprecated": true,
+      "ergebnis/composer-normalize": true,
       "infection/extension-installer": true,
       "phpstan/extension-installer": true
     },
@@ -67,6 +69,9 @@
     "sort-packages": true
   },
   "extra": {
+    "branch-alias": {
+      "dev-main": "3.7-dev"
+    },
     "composer-normalize": {
       "indent-size": 2,
       "indent-style": "space"
