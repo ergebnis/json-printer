@@ -65,5 +65,11 @@
     },
     "preferred-install": "dist",
     "sort-packages": true
+  },
+  "extra": {
+    "composer-normalize": {
+      "indent-size": 2,
+      "indent-style": "space"
+    }
   }
 }
