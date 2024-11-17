@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`3.6.0...main`][3.6.0...main].
 
+### Added
+
+- Added support for PHP 8.4 ([#863]), by [@localheinz]
+
 ## [`3.6.0`][3.6.0]
 
 For a full diff see [`3.5.0...3.6.0`][3.5.0...3.6.0].
@@ -201,6 +205,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#752]: https://github.com/ergebnis/json-printer/pull/752
 [#753]: https://github.com/ergebnis/json-printer/pull/753
 [#841]: https://github.com/ergebnis/json-printer/pull/841
+[#863]: https://github.com/ergebnis/json-printer/pull/863
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
