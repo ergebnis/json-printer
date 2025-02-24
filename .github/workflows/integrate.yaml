@@ -51,7 +51,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -120,7 +120,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -140,7 +140,7 @@ jobs:
         run: "composer normalize --ansi --dry-run"
 
       - name: "Cache cache directory for friendsofphp/php-cs-fixer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: ".build/php-cs-fixer"
           key: "php-${{ matrix.php-version }}-php-cs-fixer-${{ github.ref_name }}"
@@ -191,7 +191,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -249,7 +249,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -304,7 +304,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -316,7 +316,7 @@ jobs:
           dependencies: "${{ matrix.dependencies }}"
 
       - name: "Cache cache directory for rector/rector"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: ".build/rector"
           key: "php-${{ matrix.php-version }}-rector-${{ github.ref_name }}"
@@ -366,7 +366,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -419,7 +419,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -483,7 +483,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.9.2"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.1.2"
+        uses: "actions/cache@v4.2.1"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
