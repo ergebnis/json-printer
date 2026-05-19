@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "xdebug"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -45,20 +45,20 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
@@ -68,7 +68,7 @@ jobs:
         run: "vendor/bin/phpunit --colors=always --configuration=test/Unit/phpunit.xml --coverage-clover=.build/phpunit/logs/clover.xml"
 
       - name: "Send code coverage report to codecov.io"
-        uses: "codecov/codecov-action@v5.5.2"
+        uses: "codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de" # v5.5.2
         with:
           files: ".build/phpunit/logs/clover.xml"
           token: "${{ secrets.CODECOV_TOKEN }}"
@@ -90,17 +90,17 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Lint YAML files"
-        uses: "ibiqlik/action-yamllint@v3.1.1"
+        uses: "ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c" # v3.1.1
         with:
           config_file: ".yamllint.yaml"
           file_or_dir: "."
           strict: true
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "none"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -114,25 +114,25 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
       - name: "Install dependencies with phive"
-        uses: "ergebnis/.github/actions/phive/install@1.10.0"
+        uses: "ergebnis/.github/actions/phive/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           trust-gpg-keys: "0x033E5F8D801A2F8D"
 
@@ -140,7 +140,7 @@ jobs:
         run: "composer normalize --ansi --dry-run"
 
       - name: "Cache cache directory for friendsofphp/php-cs-fixer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: ".build/php-cs-fixer"
           key: "php-${{ matrix.php-version }}-php-cs-fixer-${{ github.ref_name }}"
@@ -168,10 +168,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "none"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -185,25 +185,25 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
       - name: "Install dependencies with phive"
-        uses: "ergebnis/.github/actions/phive/install@1.10.0"
+        uses: "ergebnis/.github/actions/phive/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           trust-gpg-keys: "0x033E5F8D801A2F8D"
 
@@ -219,12 +219,12 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
         with:
           persist-credentials: false
 
       - name: "Run zizmorcore/zizmor-action"
-        uses: "zizmorcore/zizmor-action@v0.5.6"
+        uses: "zizmorcore/zizmor-action@5f14fd08f7cf1cb1609c1e344975f152c7ee938d" # v0.5.6
         with:
           advanced-security: false
           annotations: true
@@ -247,10 +247,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "xdebug"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -263,20 +263,20 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
@@ -302,10 +302,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "none"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -318,25 +318,25 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
       - name: "Cache cache directory for rector/rector"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: ".build/rector"
           key: "php-${{ matrix.php-version }}-rector-${{ github.ref_name }}"
@@ -364,10 +364,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "none"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -380,20 +380,20 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
@@ -417,10 +417,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "none"
           extensions: "none, ctype, curl, dom, json, mbstring, opcache, pcntl, phar, posix, simplexml, tokenizer, xml, xmlwriter"
@@ -433,20 +433,20 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
@@ -478,10 +478,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "none"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -497,13 +497,13 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -514,7 +514,7 @@ jobs:
         run: "composer config platform.php --ansi --unset"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
