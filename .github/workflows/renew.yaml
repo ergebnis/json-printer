@@ -6,6 +6,8 @@ on: # yamllint disable-line rule:truthy
   schedule:
     - cron: "0 0 1 1 *"
 
+permissions: {}
+
 jobs:
   license:
     name: "License"
@@ -24,12 +26,12 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2  # zizmor: ignore[artipacked]
         with:
           token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.36.0"
+        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # 2.36.0
         with:
           coverage: "none"
           extensions: "none, ctype, curl, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter"
@@ -42,25 +44,25 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.10.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.10.0"
+        uses: "ergebnis/.github/actions/composer/install@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
         with:
           dependencies: "${{ matrix.dependencies }}"
 
       - name: "Cache cache directory for friendsofphp/php-cs-fixer"
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
         with:
           path: ".build/php-cs-fixer"
           key: "php-${{ matrix.php-version }}-php-cs-fixer-${{ github.ref_name }}"
@@ -72,7 +74,7 @@ jobs:
         run: "vendor/bin/php-cs-fixer fix --ansi --config=.php-cs-fixer.php --diff --show-progress=dots --verbose"
 
       - name: "Commit modified files"
-        uses: "stefanzweifel/git-auto-commit-action@v7.1.0"
+        uses: "stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9" # v7.1.0
         with:
           commit_author: "ergebnis-bot <bot@ergebn.is>"
           commit_message: "Enhancement: Update license year"
