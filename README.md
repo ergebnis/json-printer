@@ -1,9 +1,9 @@
 # json-printer
 
-[![Integrate](https://github.com/ergebnis/json-printer/workflows/Integrate/badge.svg)](https://github.com/ergebnis/json-printer/actions)
-[![Merge](https://github.com/ergebnis/json-printer/workflows/Merge/badge.svg)](https://github.com/ergebnis/json-printer/actions)
-[![Release](https://github.com/ergebnis/json-printer/workflows/Release/badge.svg)](https://github.com/ergebnis/json-printer/actions)
-[![Renew](https://github.com/ergebnis/json-printer/workflows/Renew/badge.svg)](https://github.com/ergebnis/json-printer/actions)
+[![Integrate](https://github.com/ergebnis/json-printer/actions/workflows/integrate.yaml/badge.svg?branch=main)](https://github.com/ergebnis/json-printer/actions/workflows/integrate.yaml)
+[![Merge](https://github.com/ergebnis/json-printer/actions/workflows/merge.yaml/badge.svg)](https://github.com/ergebnis/json-printer/actions/workflows/merge.yaml)
+[![Release](https://github.com/ergebnis/json-printer/actions/workflows/release.yaml/badge.svg)](https://github.com/ergebnis/json-printer/actions/workflows/release.yaml)
+[![Renew](https://github.com/ergebnis/json-printer/actions/workflows/renew.yaml/badge.svg)](https://github.com/ergebnis/json-printer/actions/workflows/renew.yaml)
 
 [![Code Coverage](https://codecov.io/gh/ergebnis/json-printer/branch/main/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-printer)
 
