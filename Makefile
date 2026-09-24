@@ -6,9 +6,9 @@ code-coverage: vendor ## Collects code coverage from running unit tests with php
 	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml --coverage-text
 
 .PHONY: coding-standards
-coding-standards: vendor ## Lints YAML files with yamllint, normalizes composer.json with ergebnis/composer-normalize, and fixes code style issues with friendsofphp/php-cs-fixer
+coding-standards: phive vendor ## Lints YAML files with yamllint, normalizes composer.json with ergebnis/composer-normalize, and fixes code style issues with friendsofphp/php-cs-fixer
 	yamllint -c .yamllint.yaml --strict .
-	composer normalize
+	.phive/composer-normalize
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --show-progress=dots --verbose
 
 .PHONY: dependency-analysis
@@ -25,7 +25,7 @@ mutation-tests: vendor ## Runs mutation tests with infection/infection
 
 .PHONY: phive
 phive: .phive ## Installs dependencies with phive
-	PHIVE_HOME=.build/phive phive install --trust-gpg-keys 0x033E5F8D801A2F8D
+	PHIVE_HOME=.build/phive phive install --trust-gpg-keys 0x033E5F8D801A2F8D,0xC00543248C87FB13
 
 .PHONY: refactoring
 refactoring: vendor ## Runs automated refactoring with rector/rector
