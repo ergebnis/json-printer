@@ -31,15 +31,16 @@
     "ergebnis/license": "^2.7.0",
     "ergebnis/php-cs-fixer-config": "^6.63.3",
     "ergebnis/phpunit-slow-test-detector": "^2.25.0",
+    "ergebnis/rector-rules": "^1.18.4",
     "fakerphp/faker": "^1.24.0",
     "infection/infection": "~0.26.6",
     "phpstan/extension-installer": "^1.4.3",
-    "phpstan/phpstan": "^1.12.10",
-    "phpstan/phpstan-deprecation-rules": "^1.2.1",
-    "phpstan/phpstan-phpunit": "^1.4.1",
-    "phpstan/phpstan-strict-rules": "^1.6.1",
+    "phpstan/phpstan": "^2.2.15",
+    "phpstan/phpstan-deprecation-rules": "^2.0.5",
+    "phpstan/phpstan-phpunit": "^2.0.18",
+    "phpstan/phpstan-strict-rules": "^2.0.12",
     "phpunit/phpunit": "^9.6.21",
-    "rector/rector": "^1.2.10"
+    "rector/rector": "^2.6.7"
   },
   "autoload": {
     "psr-4": {
