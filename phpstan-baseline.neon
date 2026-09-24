@@ -1,3 +1,8 @@
 parameters:
-	ignoreErrors: []
+	ignoreErrors:
+		-
+			message: '#^PHPDoc tag @var with type string is not subtype of native type non\-empty\-string\|false\.$#'
+			identifier: varTag.nativeType
+			count: 2
+			path: test/Unit/PrinterTest.php
 
