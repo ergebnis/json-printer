@@ -9,7 +9,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/json-printer/v/stable)](https://packagist.org/packages/ergebnis/json-printer)
 [![Total Downloads](https://poser.pugx.org/ergebnis/json-printer/downloads)](https://packagist.org/packages/ergebnis/json-printer)
-[![Monthly Downloads](http://poser.pugx.org/ergebnis/json-printer/d/monthly)](https://packagist.org/packages/ergebnis/json-printer)
+[![Monthly Downloads](https://poser.pugx.org/ergebnis/json-printer/d/monthly)](https://packagist.org/packages/ergebnis/json-printer)
 
 This project provides a [`composer`](https://getcomposer.org) package with a JSON printer, allowing for flexible indentation.
 
