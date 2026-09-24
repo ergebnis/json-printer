@@ -220,7 +220,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#63]: https://github.com/ergebnis/json-printer/pull/63
 [#67]: https://github.com/ergebnis/json-printer/pull/67
 [#72]: https://github.com/ergebnis/json-printer/pull/72
-[#76]: https://github.com/ergebnis/json-printer/pull/77
+[#76]: https://github.com/ergebnis/json-printer/pull/76
 [#172]: https://github.com/ergebnis/json-printer/pull/172
 [#199]: https://github.com/ergebnis/json-printer/pull/199
 [#404]: https://github.com/ergebnis/json-printer/pull/404
