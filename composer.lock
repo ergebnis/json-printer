@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "299526642756ba5f462ab9f9bbd34184",
+    "content-hash": "5b877bac6de1b252713457fe96b52612",
     "packages": [],
     "packages-dev": [
         {
@@ -725,21 +725,21 @@
         },
         {
             "name": "ergebnis/rector-rules",
-            "version": "1.18.4",
+            "version": "1.18.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/rector-rules.git",
-                "reference": "99743b41b9a2265d1b0f8721f9249f599bbb3cc0"
+                "reference": "616be34677600206ac352afc62d8a32f67353ade"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/rector-rules/zipball/99743b41b9a2265d1b0f8721f9249f599bbb3cc0",
-                "reference": "99743b41b9a2265d1b0f8721f9249f599bbb3cc0",
+                "url": "https://api.github.com/repos/ergebnis/rector-rules/zipball/616be34677600206ac352afc62d8a32f67353ade",
+                "reference": "616be34677600206ac352afc62d8a32f67353ade",
                 "shasum": ""
             },
             "require": {
                 "nikic/php-parser": "^4.17.1 || ^5.0.0",
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0",
                 "phpstan/phpstan": "^2.0.0",
                 "rector/rector": "^2.6.7"
             },
@@ -792,7 +792,7 @@
                 "security": "https://github.com/ergebnis/rector-rules/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/rector-rules"
             },
-            "time": "2026-09-24T06:19:39+00:00"
+            "time": "2026-09-24T15:52:58+00:00"
         },
         {
             "name": "erickskrauch/php-cs-fixer-custom-fixers",
