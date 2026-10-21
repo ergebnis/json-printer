@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`3.9.0...main`][3.9.0...main].
 
+### Fixed
+
+- Adjusted `Printer` to iterate over bytes instead of multibyte characters ([#1011]), by [@localheinz]
+
 ## [`3.9.0`][3.9.0]
 
 For a full diff see [`3.8.1...3.9.0`][3.8.1...3.9.0].
@@ -250,6 +254,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#892]: https://github.com/ergebnis/json-printer/pull/892
 [#893]: https://github.com/ergebnis/json-printer/pull/893
 [#962]: https://github.com/ergebnis/json-printer/pull/962
+[#1011]: https://github.com/ergebnis/json-printer/pull/1011
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
