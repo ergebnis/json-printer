@@ -1,0 +1,28 @@
+{
+  "$schema": "./vendor/phpbench/phpbench/phpbench.schema.json",
+  "report.generators": {
+    "comparison": {
+      "break": [
+        "set"
+      ],
+      "cols": [
+        "set",
+        "benchmark",
+        "subject",
+        "mode",
+        "rstdev",
+        "mem_peak"
+      ],
+      "extends": "aggregate"
+    }
+  },
+  "runner.bootstrap": "vendor/autoload.php",
+  "runner.file_pattern": "*Bench.php",
+  "runner.iterations": 5,
+  "runner.path": "test/Benchmark/",
+  "runner.php_config": {
+    "memory_limit": "-1"
+  },
+  "runner.revs": 1,
+  "storage.xml_storage_path": ".build/phpbench/storage/"
+}
