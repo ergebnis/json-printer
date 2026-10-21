@@ -11,6 +11,7 @@ For a full diff see [`3.9.0...main`][3.9.0...main].
 ### Fixed
 
 - Adjusted `Printer` to iterate over bytes instead of multibyte characters ([#1011]), by [@localheinz]
+- Adjusted `Printer` to defer the new line after an opening bracket instead of trimming the printed JSON ([#1012]), by [@localheinz]
 
 ## [`3.9.0`][3.9.0]
 
@@ -255,6 +256,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#893]: https://github.com/ergebnis/json-printer/pull/893
 [#962]: https://github.com/ergebnis/json-printer/pull/962
 [#1011]: https://github.com/ergebnis/json-printer/pull/1011
+[#1012]: https://github.com/ergebnis/json-printer/pull/1012
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
