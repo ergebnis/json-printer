@@ -75,6 +75,7 @@ final class Printer implements PrinterInterface
         $withinStringLiteral = false;
         $stringLiteral = '';
         $noEscape = true;
+        $afterOpeningBracket = false;
 
         for ($i = 0; $i < $length; ++$i) {
             /**
@@ -93,6 +94,14 @@ final class Printer implements PrinterInterface
              * Collect characters if we are inside a quoted string literal.
              */
             if ($withinStringLiteral) {
+                /**
+                 * Output the new line deferred after "{" and "[" before the string literal.
+                 */
+                if ($afterOpeningBracket) {
+                    $printed .= $newLine . \str_repeat($indent, $indentLevel);
+                    $afterOpeningBracket = false;
+                }
+
                 $stringLiteral .= $character;
                 $noEscape = '\\' === $character ? !$noEscape : true;
 
@@ -117,6 +126,23 @@ final class Printer implements PrinterInterface
             }
 
             /**
+             * Collapse empty {} and [].
+             */
+            if ($afterOpeningBracket) {
+                $afterOpeningBracket = false;
+
+                if ('}' === $character || ']' === $character) {
+                    --$indentLevel;
+
+                    $printed .= $character;
+
+                    continue;
+                }
+
+                $printed .= $newLine . \str_repeat($indent, $indentLevel);
+            }
+
+            /**
              * Ensure space after ":" character.
              */
             if (':' === $character) {
@@ -135,33 +161,22 @@ final class Printer implements PrinterInterface
             }
 
             /**
-             * Output a new line after "{" and "[" and indent the next line.
+             * Defer the new line after "{" and "[" until we know whether the next character closes them.
              */
             if ('{' === $character || '[' === $character) {
                 ++$indentLevel;
 
-                $printed .= $character . $newLine . \str_repeat($indent, $indentLevel);
+                $printed .= $character;
+                $afterOpeningBracket = true;
 
                 continue;
             }
 
             /**
-             * Output a new line after "}" and "]" and indent the next line.
+             * Output a new line before "}" and "]" and indent it.
              */
             if ('}' === $character || ']' === $character) {
                 --$indentLevel;
-
-                $trimmed = \rtrim($printed);
-                $previousNonWhitespaceCharacter = \mb_substr($trimmed, -1);
-
-                /**
-                 * Collapse empty {} and [].
-                 */
-                if ('{' === $previousNonWhitespaceCharacter || '[' === $previousNonWhitespaceCharacter) {
-                    $printed = $trimmed . $character;
-
-                    continue;
-                }
 
                 $printed .= $newLine . \str_repeat($indent, $indentLevel);
             }
