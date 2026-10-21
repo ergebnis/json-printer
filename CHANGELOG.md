@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`3.9.0...main`][3.9.0...main].
 
+### Changed
+
+- Dropped the requirement for `ext-mbstring` ([#1015]), by [@localheinz]
+
 ### Fixed
 
 - Adjusted `Printer` to iterate over bytes instead of multibyte characters ([#1011]), by [@localheinz]
@@ -259,6 +263,7 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [#1011]: https://github.com/ergebnis/json-printer/pull/1011
 [#1012]: https://github.com/ergebnis/json-printer/pull/1012
 [#1014]: https://github.com/ergebnis/json-printer/pull/1014
+[#1015]: https://github.com/ergebnis/json-printer/pull/1015
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
