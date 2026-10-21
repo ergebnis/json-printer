@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`3.9.0...main`][3.9.0...main].
+For a full diff see [`3.9.1...main`][3.9.1...main].
+
+## [`3.9.1`][3.9.1]
+
+For a full diff see [`3.9.0...3.9.1`][3.9.0...3.9.1].
 
 ### Changed
 
@@ -216,6 +220,8 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [3.7.0]: https://github.com/ergebnis/json-printer/releases/tag/3.7.0
 [3.8.0]: https://github.com/ergebnis/json-printer/releases/tag/3.8.0
 [3.8.1]: https://github.com/ergebnis/json-printer/releases/tag/3.8.1
+[3.9.0]: https://github.com/ergebnis/json-printer/releases/tag/3.9.0
+[3.9.1]: https://github.com/ergebnis/json-printer/releases/tag/3.9.1
 
 [8849fc6...1.0.0]: https://github.com/ergebnis/json-printer/compare/8849fc6...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/json-printer/compare/1.0.0...1.1.0
@@ -235,8 +241,8 @@ For a full diff see [`8849fc6...1.0.0`][8849fc6...1.0.0].
 [3.7.0...3.8.0]: https://github.com/ergebnis/json-printer/compare/3.7.0...3.8.0
 [3.8.0...3.8.1]: https://github.com/ergebnis/json-printer/compare/3.8.0...3.8.1
 [3.8.1...3.9.0]: https://github.com/ergebnis/json-printer/compare/3.8.1...3.9.0
-[3.9.0]: https://github.com/ergebnis/json-printer/releases/tag/3.9.0
-[3.9.0...main]: https://github.com/ergebnis/json-printer/compare/3.9.0...main
+[3.9.0...3.9.1]: https://github.com/ergebnis/json-printer/compare/3.9.0...3.9.1
+[3.9.1...main]: https://github.com/ergebnis/json-printer/compare/3.9.1...main
 
 [#33]: https://github.com/ergebnis/json-printer/pull/33
 [#37]: https://github.com/ergebnis/json-printer/pull/37
