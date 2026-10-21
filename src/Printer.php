@@ -55,14 +55,14 @@ final class Printer implements PrinterInterface
             ));
         }
 
-        if (1 !== \preg_match('/^( +|\t+)$/', $indent)) {
+        if (1 !== \preg_match('/^( +|\t+)\z/', $indent)) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not a valid indent.',
                 $indent,
             ));
         }
 
-        if (1 !== \preg_match('/^(?>\r\n|\n|\r)$/', $newLine)) {
+        if (1 !== \preg_match('/^(?>\r\n|\n|\r)\z/', $newLine)) {
             throw new \InvalidArgumentException(\sprintf(
                 '"%s" is not a valid new-line character sequence.',
                 $newLine,
