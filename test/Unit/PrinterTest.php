@@ -24,7 +24,7 @@ final class PrinterTest extends Framework\TestCase
 {
     use Test\Util\Helper;
 
-    public function testPrintRejectsInvalidJson(): void
+    public function testPrintThrowsInvalidArgumentExceptionWhenJsonIsInvalid(): void
     {
         $json = self::faker()->realText();
 
@@ -42,7 +42,7 @@ final class PrinterTest extends Framework\TestCase
     /**
      * @dataProvider provideInvalidIndent
      */
-    public function testPrintRejectsInvalidIndent(string $indent): void
+    public function testPrintThrowsInvalidArgumentExceptionWhenIndentIsInvalid(string $indent): void
     {
         $json = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
@@ -84,7 +84,7 @@ JSON;
     /**
      * @dataProvider provideInvalidNewLine
      */
-    public function testPrintRejectsInvalidNewLine(string $newLine): void
+    public function testPrintThrowsInvalidArgumentExceptionWhenNewLineIsInvalid(string $newLine): void
     {
         $json = <<<'JSON'
 ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
