@@ -511,4 +511,42 @@ JSON;
 
         self::assertSame($json, $printed);
     }
+
+    public function testPrintPrintsPrettyWhenJsonContainsMultibyteCharacters(): void
+    {
+        $faker = self::faker('de_DE');
+
+        $data = [];
+
+        for ($i = 0; 100 > $i; ++$i) {
+            $data[] = [
+                'emoji' => '🤓',
+                'name' => $faker->name(),
+                'tags' => [],
+                'text' => $faker->realText(),
+            ];
+        }
+
+        $flags = \JSON_THROW_ON_ERROR | \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE;
+
+        $json = \json_encode(
+            $data,
+            $flags,
+        );
+
+        $expected = \json_encode(
+            $data,
+            $flags | \JSON_PRETTY_PRINT,
+        );
+
+        $printer = new Printer();
+
+        $printed = $printer->print(
+            $json,
+            '    ',
+            "\n",
+        );
+
+        self::assertSame($expected, $printed);
+    }
 }
