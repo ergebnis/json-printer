@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f78fe81b9c38d4bcaf42f88aeeb0892a",
+    "content-hash": "4987a6a11d0b3b0d4b63b7dfd848478a",
     "packages": [],
     "packages-dev": [
         {
@@ -779,16 +779,16 @@
         },
         {
             "name": "ergebnis/php-cs-fixer-config",
-            "version": "6.64.3",
+            "version": "6.65.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/php-cs-fixer-config.git",
-                "reference": "160264a7f3c88522fb532fb8ecb8376a6d5f60f9"
+                "reference": "ff9e10dbda4515b7f63b85b301cc1b6583d85878"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/php-cs-fixer-config/zipball/160264a7f3c88522fb532fb8ecb8376a6d5f60f9",
-                "reference": "160264a7f3c88522fb532fb8ecb8376a6d5f60f9",
+                "url": "https://api.github.com/repos/ergebnis/php-cs-fixer-config/zipball/ff9e10dbda4515b7f63b85b301cc1b6583d85878",
+                "reference": "ff9e10dbda4515b7f63b85b301cc1b6583d85878",
                 "shasum": ""
             },
             "require": {
@@ -819,7 +819,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "6.64-dev"
+                    "dev-main": "6.65-dev"
                 },
                 "composer-normalize": {
                     "indent-size": 2,
@@ -849,7 +849,7 @@
                 "security": "https://github.com/ergebnis/php-cs-fixer-config/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/php-cs-fixer-config"
             },
-            "time": "2026-11-10T23:08:21+00:00"
+            "time": "2026-11-11T09:08:33+00:00"
         },
         {
             "name": "ergebnis/phpunit-slow-test-detector",
