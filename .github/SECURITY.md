@@ -4,13 +4,13 @@
 
 The following versions of `ergebnis/json-printer` have active support:
 
-- `^3.10.0`
+- `^3.11.0`
 
 ## Unsupported Versions
 
 The following versions of `ergebnis/json-printer` have reached their end of life:
 
-- `<3.10.0`
+- `<3.11.0`
 
 ## Reporting a Vulnerability
 
