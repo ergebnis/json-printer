@@ -45,8 +45,8 @@ final class PrinterTest extends Framework\TestCase
     public function testPrintThrowsInvalidArgumentExceptionWhenIndentIsInvalid(string $indent): void
     {
         $json = <<<'JSON'
-["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
-JSON;
+            ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
+            JSON;
 
         $printer = new Printer();
 
@@ -87,8 +87,8 @@ JSON;
     public function testPrintThrowsInvalidArgumentExceptionWhenNewLineIsInvalid(string $newLine): void
     {
         $json = <<<'JSON'
-["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
-JSON;
+            ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
+            JSON;
         $indent = '    ';
 
         $printer = new Printer();
@@ -134,20 +134,20 @@ JSON;
     public function testPrintPrintsPretty(): void
     {
         $json = <<<'JSON'
-{"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
-JSON;
+            {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
+            JSON;
 
         $expected = <<<'JSON'
-{
-    "name": "Andreas M\u00f6ller",
-    "emoji": "🤓",
-    "urls": [
-        "https:\/\/localheinz.com",
-        "https:\/\/github.com\/localheinz",
-        "https:\/\/twitter.com\/localheinz"
-    ]
-}
-JSON;
+            {
+                "name": "Andreas M\u00f6ller",
+                "emoji": "🤓",
+                "urls": [
+                    "https:\/\/localheinz.com",
+                    "https:\/\/github.com\/localheinz",
+                    "https:\/\/twitter.com\/localheinz"
+                ]
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -159,21 +159,21 @@ JSON;
     public function testPrintPrintsPrettyWithIndent(): void
     {
         $json = <<<'JSON'
-{"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
-JSON;
+            {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
+            JSON;
         $indent = '  ';
 
         $expected = <<<'JSON'
-{
-  "name": "Andreas M\u00f6ller",
-  "emoji": "🤓",
-  "urls": [
-    "https:\/\/localheinz.com",
-    "https:\/\/github.com\/localheinz",
-    "https:\/\/twitter.com\/localheinz"
-  ]
-}
-JSON;
+            {
+              "name": "Andreas M\u00f6ller",
+              "emoji": "🤓",
+              "urls": [
+                "https:\/\/localheinz.com",
+                "https:\/\/github.com\/localheinz",
+                "https:\/\/twitter.com\/localheinz"
+              ]
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -191,21 +191,21 @@ JSON;
     public function testPrintPrintsPrettyWithIndentAndNewLine(string $newLine): void
     {
         $json = <<<'JSON'
-{"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
-JSON;
+            {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
+            JSON;
         $indent = '  ';
 
         $expected = <<<'JSON'
-{
-  "name": "Andreas M\u00f6ller",
-  "emoji": "🤓",
-  "urls": [
-    "https:\/\/localheinz.com",
-    "https:\/\/github.com\/localheinz",
-    "https:\/\/twitter.com\/localheinz"
-  ]
-}
-JSON;
+            {
+              "name": "Andreas M\u00f6ller",
+              "emoji": "🤓",
+              "urls": [
+                "https:\/\/localheinz.com",
+                "https:\/\/github.com\/localheinz",
+                "https:\/\/twitter.com\/localheinz"
+              ]
+            }
+            JSON;
 
         $expectedWithNewLine = \str_replace(
             \PHP_EOL,
@@ -247,20 +247,20 @@ JSON;
     public function testPrintPrintsPrettyButDoesNotUnEscapeUnicodeCharactersAndSlashes(): void
     {
         $json = <<<'JSON'
-{"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
-JSON;
+            {"name":"Andreas M\u00f6ller","emoji":"🤓","urls":["https:\/\/localheinz.com","https:\/\/github.com\/localheinz","https:\/\/twitter.com\/localheinz"]}
+            JSON;
 
         $expected = <<<'JSON'
-{
-    "name": "Andreas M\u00f6ller",
-    "emoji": "🤓",
-    "urls": [
-        "https:\/\/localheinz.com",
-        "https:\/\/github.com\/localheinz",
-        "https:\/\/twitter.com\/localheinz"
-    ]
-}
-JSON;
+            {
+                "name": "Andreas M\u00f6ller",
+                "emoji": "🤓",
+                "urls": [
+                    "https:\/\/localheinz.com",
+                    "https:\/\/github.com\/localheinz",
+                    "https:\/\/twitter.com\/localheinz"
+                ]
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -272,20 +272,20 @@ JSON;
     public function testPrintPrintsPrettyButDoesNotEscapeUnicodeCharactersAndSlashes(): void
     {
         $json = <<<'JSON'
-{"name":"Andreas Möller","emoji":"🤓","urls":["https://localheinz.com","https://github.com/localheinz","https://twitter.com/localheinz"]}
-JSON;
+            {"name":"Andreas Möller","emoji":"🤓","urls":["https://localheinz.com","https://github.com/localheinz","https://twitter.com/localheinz"]}
+            JSON;
 
         $expected = <<<'JSON'
-{
-    "name": "Andreas Möller",
-    "emoji": "🤓",
-    "urls": [
-        "https://localheinz.com",
-        "https://github.com/localheinz",
-        "https://twitter.com/localheinz"
-    ]
-}
-JSON;
+            {
+                "name": "Andreas Möller",
+                "emoji": "🤓",
+                "urls": [
+                    "https://localheinz.com",
+                    "https://github.com/localheinz",
+                    "https://twitter.com/localheinz"
+                ]
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -297,16 +297,16 @@ JSON;
     public function testPrintPrintsPrettyIdempotently(): void
     {
         $json = <<<'JSON'
-{
-    "name": "Andreas M\u00f6ller",
-    "emoji": "🤓",
-    "urls": [
-        "https:\/\/localheinz.com",
-        "https:\/\/github.com\/localheinz",
-        "https:\/\/twitter.com\/localheinz"
-    ]
-}
-JSON;
+            {
+                "name": "Andreas M\u00f6ller",
+                "emoji": "🤓",
+                "urls": [
+                    "https:\/\/localheinz.com",
+                    "https:\/\/github.com\/localheinz",
+                    "https:\/\/twitter.com\/localheinz"
+                ]
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -318,18 +318,18 @@ JSON;
     public function testPrintRemovesTrailingEmptyLines(): void
     {
         $json = <<<'JSON'
-{
-    "name": "Andreas Möller",
-    "emoji": "🤓",
-    "urls": [
-        "https://localheinz.com",
-        "https://github.com/localheinz",
-        "https://twitter.com/localheinz"
-    ]
-}
+            {
+                "name": "Andreas Möller",
+                "emoji": "🤓",
+                "urls": [
+                    "https://localheinz.com",
+                    "https://github.com/localheinz",
+                    "https://twitter.com/localheinz"
+                ]
+            }
 
 
-JSON;
+            JSON;
 
         $printer = new Printer();
 
@@ -341,16 +341,16 @@ JSON;
     public function testPrintCollapsesEmptyArray(): void
     {
         $json = <<<'JSON'
-[
+            [
 
 
 
-        ]
-JSON;
+                    ]
+            JSON;
 
         $expected = <<<'JSON'
-[]
-JSON;
+            []
+            JSON;
 
         $printer = new Printer();
 
@@ -362,16 +362,16 @@ JSON;
     public function testPrintCollapsesEmptyObject(): void
     {
         $json = <<<'JSON'
-{
+            {
 
 
 
-        }
-JSON;
+                    }
+            JSON;
 
         $expected = <<<'JSON'
-{}
-JSON;
+            {}
+            JSON;
 
         $printer = new Printer();
 
@@ -383,21 +383,21 @@ JSON;
     public function testPrintCollapsesEmptyComplex(): void
     {
         $json = <<<'JSON'
-{
-            "foo":          {
+            {
+                        "foo":          {
 
 
-}   ,
-    "bar": [                                ]
-        }
-JSON;
+            }   ,
+                "bar": [                                ]
+                    }
+            JSON;
 
         $expected = <<<'JSON'
-{
-    "foo": {},
-    "bar": []
-}
-JSON;
+            {
+                "foo": {},
+                "bar": []
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -412,19 +412,19 @@ JSON;
     public function testPrintDoesNotRemoveSpaceAroundCommaInStringValue(): void
     {
         $json = <<<'JSON'
-{"after":"Level is greater than 9000, maybe even 9001!","around":"Really , nobody does that.","in-array":["Level is greater than 9000, maybe even 9001!","Really , nobody does that."]}
-JSON;
+            {"after":"Level is greater than 9000, maybe even 9001!","around":"Really , nobody does that.","in-array":["Level is greater than 9000, maybe even 9001!","Really , nobody does that."]}
+            JSON;
 
         $expected = <<<'JSON'
-{
-    "after": "Level is greater than 9000, maybe even 9001!",
-    "around": "Really , nobody does that.",
-    "in-array": [
-        "Level is greater than 9000, maybe even 9001!",
-        "Really , nobody does that."
-    ]
-}
-JSON;
+            {
+                "after": "Level is greater than 9000, maybe even 9001!",
+                "around": "Really , nobody does that.",
+                "in-array": [
+                    "Level is greater than 9000, maybe even 9001!",
+                    "Really , nobody does that."
+                ]
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -442,12 +442,12 @@ JSON;
         $json = \json_encode([1, '\\', 3]);
 
         $expected = <<<'JSON'
-[
-    1,
-    "\\",
-    3
-]
-JSON;
+            [
+                1,
+                "\\",
+                3
+            ]
+            JSON;
 
         $printer = new Printer();
 
@@ -465,10 +465,10 @@ JSON;
         $json = \json_encode(['a' => '\\']);
 
         $expected = <<<'JSON'
-{
-    "a": "\\"
-}
-JSON;
+            {
+                "a": "\\"
+            }
+            JSON;
 
         $printer = new Printer();
 
@@ -483,27 +483,27 @@ JSON;
     public function testPrintPrintsJsonWhenValueContainsJsonString(): void
     {
         $json = <<<'JSON'
-{
-  "type": "auth-token",
-  "error": "Server error: `POST https://xxxx.xxxxx.net/sms/send` resulted in a `500 Internal Server Error` response:\n{\"status\":106000,\"description\":\"Unknown error\",\"translatedDescription\":null}",
-  "queue": "auth",
-  "token": "V25EP",
-  "origin": "foobar",
-  "identifier": null,
-  "recipients": [
-    {
-      "email": "blabla@hotmail.com",
-      "mobile": "11111111",
-      "mobile_country_code": "0047"
-    }
-  ],
-  "request_ip": "11.111.11.111",
-  "destination": "004711111111",
-  "consignor_id": null,
-  "sms_error_code": null,
-  "sms_error_description": null
-}
-JSON;
+            {
+              "type": "auth-token",
+              "error": "Server error: `POST https://xxxx.xxxxx.net/sms/send` resulted in a `500 Internal Server Error` response:\n{\"status\":106000,\"description\":\"Unknown error\",\"translatedDescription\":null}",
+              "queue": "auth",
+              "token": "V25EP",
+              "origin": "foobar",
+              "identifier": null,
+              "recipients": [
+                {
+                  "email": "blabla@hotmail.com",
+                  "mobile": "11111111",
+                  "mobile_country_code": "0047"
+                }
+              ],
+              "request_ip": "11.111.11.111",
+              "destination": "004711111111",
+              "consignor_id": null,
+              "sms_error_code": null,
+              "sms_error_description": null
+            }
+            JSON;
 
         $printer = new Printer();
 
