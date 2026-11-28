@@ -30,7 +30,7 @@
     "ergebnis/license": "^2.9.0",
     "ergebnis/php-cs-fixer-config": "^6.65.0",
     "ergebnis/phpunit-slow-test-detector": "^2.27.0",
-    "ergebnis/rector-rules": "^1.19.0",
+    "ergebnis/rector-config": "~0.3.1",
     "fakerphp/faker": "^1.24.0",
     "infection/infection": "~0.26.6",
     "phpbench/phpbench": "^1.2.14",
@@ -39,8 +39,7 @@
     "phpstan/phpstan-deprecation-rules": "^2.0.5",
     "phpstan/phpstan-phpunit": "^2.1.2",
     "phpstan/phpstan-strict-rules": "^2.1.1",
-    "phpunit/phpunit": "^9.6.21",
-    "rector/rector": "^2.7.0"
+    "phpunit/phpunit": "^9.6.21"
   },
   "autoload": {
     "psr-4": {

@@ -13,8 +13,7 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\Printer\Test\Unit;
 
-use Ergebnis\Json\Printer\Printer;
-use Ergebnis\Json\Printer\Test;
+use Ergebnis\Json\Printer;
 use PHPUnit\Framework;
 
 /**
@@ -22,13 +21,13 @@ use PHPUnit\Framework;
  */
 final class PrinterTest extends Framework\TestCase
 {
-    use Test\Util\Helper;
+    use Printer\Test\Util\Helper;
 
     public function testPrintThrowsInvalidArgumentExceptionWhenJsonIsInvalid(): void
     {
         $json = self::faker()->realText();
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(\sprintf(
@@ -48,7 +47,7 @@ final class PrinterTest extends Framework\TestCase
             ["Andreas M\u00f6ller","🤓","https:\/\/localheinz.com"]
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(\sprintf(
@@ -91,7 +90,7 @@ final class PrinterTest extends Framework\TestCase
             JSON;
         $indent = '    ';
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(\sprintf(
@@ -149,7 +148,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -175,7 +174,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print(
             $json,
@@ -213,7 +212,7 @@ final class PrinterTest extends Framework\TestCase
             $expected,
         );
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print(
             $json,
@@ -262,7 +261,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -287,7 +286,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -308,7 +307,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -331,7 +330,7 @@ final class PrinterTest extends Framework\TestCase
 
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -352,7 +351,7 @@ final class PrinterTest extends Framework\TestCase
             []
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -373,7 +372,7 @@ final class PrinterTest extends Framework\TestCase
             {}
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -399,7 +398,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -426,7 +425,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -449,7 +448,7 @@ final class PrinterTest extends Framework\TestCase
             ]
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -470,7 +469,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print($json);
 
@@ -505,7 +504,7 @@ final class PrinterTest extends Framework\TestCase
             }
             JSON;
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print(
             $json,
@@ -542,7 +541,7 @@ final class PrinterTest extends Framework\TestCase
             $flags | \JSON_PRETTY_PRINT,
         );
 
-        $printer = new Printer();
+        $printer = new Printer\Printer();
 
         $printed = $printer->print(
             $json,
