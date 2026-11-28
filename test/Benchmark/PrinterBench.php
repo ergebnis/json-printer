@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\Printer\Test\Benchmark;
 
-use Ergebnis\Json\Printer\Printer;
+use Ergebnis\Json\Printer;
 
 final class PrinterBench
 {
     private string $json;
-    private Printer $printer;
+    private Printer\Printer $printer;
 
     /**
      * @param array{count: int, item: array<string, mixed>} $parameters
@@ -33,7 +33,7 @@ final class PrinterBench
             ),
             \JSON_THROW_ON_ERROR | \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE,
         );
-        $this->printer = new Printer();
+        $this->printer = new Printer\Printer();
     }
 
     /**
